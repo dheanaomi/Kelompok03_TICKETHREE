@@ -365,4 +365,4 @@ else:
         print("Tiket Anda Telah Dibatalkan, Refund akan dikirim melalui metode pembayaran dengan potongan 20%")
 
     else:
-       exit().
+       exit()
