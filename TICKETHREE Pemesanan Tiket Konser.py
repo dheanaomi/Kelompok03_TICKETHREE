@@ -410,8 +410,53 @@ for a in num_array:
     print(("- {}").format(a))
 print("Total Harga", "Rp.", (total_biaya))
 
+# informasi paket dan promo tiap bank
+promo_BNI = 0.03
+promo_Mandiri = 0.025
+promo_BCA = 0.025
+promo_shopeepay = 0.3
+promo_gopay = 0.3
+paket1 = 15000
+paket2 = 85000
+paket3 = 110000
+
+# PROGRAM PEMBELIAN MERCHANDISE
+print('\n Disini kami menyediakan paket merchandise eksklusif untuk memeriahkan konser yang Anda pilih')
+merchandise = int(input(
+    ' 1. Lighstick\n 2. Lighstick + kaos\n 3. Lightstick + kaos + topi\n Apakah Anda akan membeli paket merchandise?\n (Jika iya ketik 1, Jika tidak ketik 2) \n '))
+
+if merchandise == 1:
+    paket = str(
+        input(' 1. Lighstick\n 2. Lighstick + kaos\n 3. Lightstick + kaos + topi\n Silahkan pilih 1, 2, atau 3 :\n'))
+    if paket == '1':
+        biaya1 = total_biaya + paket1
+        print('Total biaya = ', biaya1)
+
+    elif paket == '2':
+        biaya1 = total_biaya +  paket2
+        print('Total biaya = ', biaya1)
+
+    else:
+        biaya1 = total_biaya +  paket3
+        print('Total biaya = ', biaya1)
+
+else:
+    biaya1 = total_biaya 
+    print('Total biaya = ', biaya1)
 
 
 
+# Memunculkan kode transaksi
+import random
 
+bil = random.randint(999999, 9999999)
+kode_unik = random.randint(99, 9999)
+print("------------ Kode transaksi Anda ------------\n",
+      "\n------------------ ", bil, " ------------------ ", 
+    "\n\nSilahkan lakukan pembayaran dengan kode tersebut\n")
 
+bayar = int(input("Silahkan masukkan kode transaksi untuk melakukan pembayaran:\n"))
+if bayar == bil :
+     print("\nSelamat! Transaksi sukses!\n")
+else:
+    print('Kode yang Anda masukkan salah! Silahkan coba lagi!\n')
