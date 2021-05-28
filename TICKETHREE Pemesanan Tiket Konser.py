@@ -46,7 +46,7 @@ if pilihan_menu == 1:
             print("Harga Tiket : Rp 1.200.000,00")
             print("Status      : Tersisa >100")
             print("\n============================================================")
-        elif genre == "2":
+         elif genre == "2":
             print("\n===========================================================")
             print("Nama Acara  : Indigo Fest")
             print("Nama Artis  : Fourtwenty")
@@ -60,7 +60,7 @@ if pilihan_menu == 1:
             print("Harga Tiket : Rp 1.300.000,00")
             print("Status      : Tersisa <100")
             print("\n============================================================")
-        elif genre == "3":
+         elif genre == "3":
             print("\n===========================================================")
             print("Nama Acara  : Java Jazz Fest")
             print("Nama Artis  : Tulus")
@@ -74,7 +74,7 @@ if pilihan_menu == 1:
             print("Harga Tiket : Rp 1.500.000,00")
             print("Status      : Tersisa <100")
             print("\n============================================================")
-        else:
+         else:
             print("\n===========================================================")
             print("Nama Acara  : Lalala Fest")
             print("Nama Artis  : Ardhito Pramono")
