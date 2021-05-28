@@ -1,3 +1,6 @@
+import os
+loop = True
+
 #Memulai Program TICKETHREE
 #Menampilkan program
 tampilan = "Selamat Datang di Program TICKETHREE Aplikasi Pemesanan Tiket Konser Online"
@@ -367,6 +370,45 @@ else:
     else:
        exit()
 
+#pemesanan tiket
+biaya_adm = 3000
+
+num_array = list()
+banyak_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan : "))
+print("Nasukan nama Pemesan : ")
+for i in range(int(banyak_tiket)):
+    i += 1
+    n = input("Nama orang ke {} :".format(i))
+    num_array.append(str(n))
+print("Masukkan nomor telepon :")
+for i in range(int(banyak_tiket)):
+    i += 1
+    n = input("No telepon orang ke {} :".format(i))
+    num_array.append(str(n))
+print("Masukkan email:")
+for i in range(int(banyak_tiket)):
+    i += 1
+    n = input("Email orang ke  {} :".format(i))
+    num_array.append(str(n))
+print("Masukkan No KTP :")
+for i in range(int(banyak_tiket)):
+    i += 1
+    n = input("No KTP orang ke  {} :".format(i))
+    num_array.append(str(n))
+print("Masukkan Usia :")
+for i in range(int(banyak_tiket)):
+    i += 1
+    n = input("Usia orang ke{} :".format(i))
+    num_array.append(str(n))
+total_biaya = banyak_tiket * harga_tiket * 0.05 + biaya_adm
+os.system('cls')
+print("\n----------------------------------------------")
+print("Anda telah berhasil melakukan pembelian tiket ")
+print("----------------------------------------------")
+print("Nama Pemesan :".format(len(num_array)))
+for a in num_array:
+    print(("- {}").format(a))
+print("Total Harga", "Rp.", (total_biaya))
 
 
 
