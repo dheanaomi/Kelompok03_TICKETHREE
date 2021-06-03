@@ -1,6 +1,5 @@
-import os
-
-loop = True
+from os import system
+import time
 
 # Memulai Program TICKETHREE
 # Menampilkan program
@@ -279,7 +278,7 @@ Filter Harga Berdasarkan\t:
                 mainmenu()
         else:
             print("\nMaaf Kode yang Anda Masukkan Salah")
-
+            mainmenu()
     else:
         exit()
 
