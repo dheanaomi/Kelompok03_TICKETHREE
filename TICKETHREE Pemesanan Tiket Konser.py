@@ -1,35 +1,49 @@
 import os
+
 loop = True
 
-#Memulai Program TICKETHREE
-#Menampilkan program
+# Memulai Program TICKETHREE
+# Menampilkan program
 tampilan = 'Selamat Datang di Program TICKETHREE Aplikasi Pemesanan Tiket Konser Online'
-s=tampilan.center(120, "=")
+s = tampilan.center(120, "=")
 print(s)
 
-katalog_konser={
-    'Katalog_1':{'Nama Acara':'We The Fest', 'Artis': 'Dipha Barus,Weird Genius,Roni & Joni,Cyda', 'Tanggal':'Jumat, 11 Juni 2021', 'Kota':'Medan', 'Tempat': 'Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman', 'Genre':'EDM', 'Harga':1200000, 'Status\t': '>100'},
-    'Katalog_2':{'Nama Acara':'Indigo Fest', 'Artis': 'Fourtwenty,Burgerkill,Bottlesmoker,Mocca', 'Tanggal':'Minggu, 20 Juni 2021', 'Kota':'Riau', 'Tempat': 'Kompleks Bandar Seni Raja Ali Haji Purna', 'Genre':'Indie', 'Harga':1300000, 'Status': '<100'},
-    'Katalog_3':{'Nama Acara':'Java Jazz Fest', 'Artis': 'Tulus,Indra Lesmana,Maliq & DEssentials,Andien', 'Tanggal':'Senin, 28 Juni 2021', 'Kota':'Surabaya', 'Tempat': 'Tunjungan Plaza Convention Center', 'Genre':'Jazz', 'Harga':1500000,'Status':'<100'},
-    'Katalog_4':{'Nama Acara':'Lalala Fest', 'Artis': 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush', 'Tanggal':'Sabtu, 5 Juni 2021', 'Kota':'Jakarta', 'Tempat': 'Aula Simfonia 81 Jln. Industri Raya Blok B14', 'Genre':'Pop', 'Harga':500000, 'Status': '>100'}
+katalog_konser = {
+    'Katalog_1': {'Nama Acara': 'We The Fest', 'Artis': 'Dipha Barus,Weird Genius,Roni & Joni,Cyda',
+                  'Tanggal': 'Jumat, 11 Juni 2021', 'Kota': 'Medan',
+                  'Tempat': 'Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman', 'Genre': 'EDM',
+                  'Harga': 1200000, 'Status\t': '>100'},
+    'Katalog_2': {'Nama Acara': 'Indigo Fest', 'Artis': 'Fourtwenty,Burgerkill,Bottlesmoker,Mocca',
+                  'Tanggal': 'Minggu, 20 Juni 2021', 'Kota': 'Riau',
+                  'Tempat': 'Kompleks Bandar Seni Raja Ali Haji Purna', 'Genre': 'Indie', 'Harga': 1300000,
+                  'Status': '<100'},
+    'Katalog_3': {'Nama Acara': 'Java Jazz Fest', 'Artis': 'Tulus,Indra Lesmana,Maliq & DEssentials,Andien',
+                  'Tanggal': 'Senin, 28 Juni 2021', 'Kota': 'Surabaya', 'Tempat': 'Tunjungan Plaza Convention Center',
+                  'Genre': 'Jazz', 'Harga': 1500000, 'Status': '<100'},
+    'Katalog_4': {'Nama Acara': 'Lalala Fest', 'Artis': 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush',
+                  'Tanggal': 'Sabtu, 5 Juni 2021', 'Kota': 'Jakarta',
+                  'Tempat': 'Aula Simfonia 81 Jln. Industri Raya Blok B14', 'Genre': 'Pop', 'Harga': 500000,
+                  'Status': '>100'}
 }
 
-tamp ="""\n======================================
+tamp = """\n======================================
 Informasi Pemesanan Tiket Konser 'TICKETHREE'
 ======================================"""
 
+
 def formatter(katalog):
     for key in katalog.keys():
-        print(f"""{key}= {katalog[key]}""")
+        print(f"""{key}\t\t= {katalog[key]}""")
 
-#Menampilkan menu program TICKETHREE
+
+# Menampilkan menu program TICKETHREE
 def mainmenu():
     print("""Menu Program\t\t: 
 1.Menu Pembelian Tiket Konser
 2.Menu Pembatalan Tiket konser""")
-    v='='*len(s)
+    v = '=' * len(s)
     print(v)
-    #Menginputkan menu yang diinginkan
+    # Menginputkan menu yang diinginkan
     pilihan_menu = int(input("Ketik Menu Program\t:"))
     if pilihan_menu == 1:
         print("""
@@ -40,12 +54,12 @@ Filter Konser Berdasarkan\t:
 3. Kota
 4. Harga
 \n=================================================""")
-        
-        filter_pilihan= int(input("Ketik Filter Konser Yang Anda Inginkan (1/2/3/4)\t:"))
 
-        #Berdasarkan Genre
-        if filter_pilihan ==1:
-            #Menampilkan list berdasar genre
+        filter_pilihan = int(input("Ketik Filter Konser Yang Anda Inginkan (1/2/3/4)\t:"))
+
+        # Berdasarkan Genre
+        if filter_pilihan == 1:
+            # Menampilkan list berdasar genre
             print("""
 \n=================================================
 List Konser Berdasar Genre:
@@ -54,29 +68,29 @@ List Konser Berdasar Genre:
 3. Jazz
 4. Pop
 """)
-            list_genre= int(input("Ketik List Konser Genre (1/2/3/4)\t: "))
-            if list_genre==1:
+            list_genre = int(input("Ketik List Konser Genre (1/2/3/4)\t: "))
+            if list_genre == 1:
                 print(tamp)
                 for key in katalog_konser.keys():
                     if katalog_konser[key]['Genre'] == 'EDM':
                         current_harga = katalog_konser[key]['Harga']
                         print(formatter(katalog_konser[key]))
 
-            elif list_genre==2:
+            elif list_genre == 2:
                 print(tamp)
                 for key in katalog_konser.keys():
                     if katalog_konser[key]['Genre'] == 'Indie':
                         current_harga = katalog_konser[key]['Harga']
                         print(formatter(katalog_konser[key]))
 
-            elif list_genre==3:
+            elif list_genre == 3:
                 print(tamp)
                 for key in katalog_konser.keys():
                     if katalog_konser[key]['Genre'] == 'Jazz':
                         current_harga = katalog_konser[key]['Harga']
                         print(formatter(katalog_konser[key]))
 
-            elif list_genre==4:
+            elif list_genre == 4:
                 print(tamp)
                 for key in katalog_konser.keys():
                     if katalog_konser[key]['Genre'] == 'Pop':
@@ -85,7 +99,7 @@ List Konser Berdasar Genre:
             else:
                 print("\nMaaf Pilihan yang Anda Masukkan Salah")
 
-        #Berdasarkan Artis
+        # Berdasarkan Artis
         elif filter_pilihan == 2:
             # Menampilkan list berdasar artis
             print("""
@@ -103,19 +117,19 @@ List Konser Berdasar Artis:
                     if katalog_konser[key]['Artis'][0] == 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush':
                         current_harga = katalog_konser[key]['Harga']
                         print(formatter(katalog_konser[key]))
-            elif list_artis ==2:
+            elif list_artis == 2:
                 print(tamp)
                 for key in katalog_konser.keys():
                     if katalog_konser[key]['Artis'] == 'Dipha Barus,Weird Genius,Roni & Joni,Cyda':
                         current_harga = katalog_konser[key]['Harga']
                         print(formatter(katalog_konser[key]))
-            elif list_artis ==3:
+            elif list_artis == 3:
                 print(tamp)
                 for key in katalog_konser.keys():
                     if katalog_konser[key]['Artis'] == 'Fourtwenty,Burgerkill,Bottlesmoker,Mocca':
                         current_harga = katalog_konser[key]['Harga']
                         print(formatter(katalog_konser[key]))
-            elif list_artis ==4:
+            elif list_artis == 4:
                 print(tamp)
                 for key in katalog_konser.keys():
                     if katalog_konser[key]['Artis'] == 'Tulus,Indra Lesmana,Maliq & DEssentials,Andien':
@@ -125,13 +139,133 @@ List Konser Berdasar Artis:
                 print("\nMaaf Pilihan yang Anda Masukkan Salah")
 
         # Berdasarkan Kota
-        elif filter_pilihan ==3:
-            print("Bagiannya Afiq")
+        elif filter_pilihan == 3:
+            #Menampilkan list berdasar kota
+            print(""" 
+\n================================================
+List Konser Berdasar Kota\t:
+1. Jakarta
+2. Medan
+3. Riau
+4. Surabaya
+""")
+            list_kota = int(input("Ketik List Konser Berdasar Kota (1/2/3/4)\t: "))
+            if list_kota == 1:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Kota'] == 'Jakarta':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+            elif list_kota == 2:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Kota'] == 'Medan':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+            elif list_kota == 3:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Kota'] == 'Riau':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+            elif list_kota == 4:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Kota'] == 'Surabaya':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+            else:
+                print("\nMaaf Pilihan yang Anda Masukkan Salah")
+
         # Berdasarkan Harga
-        elif filter_pilihan ==4:
-            print("Lanjut Afiq")
-        else:
-            mainmenu()
+        elif filter_pilihan == 4:
+            #Menampilkan list berdasarkan harga
+            print("""
+\n================================================
+Filter Harga Berdasarkan\t:
+1. Tertinggi->Terendah
+2. Terendah->Tertinggi
+""")
+            filter_harga = int(input("Ketik Filter Harga yang Anda Inginkan (1/2/3/4)\t: "))
+            list_harga = []
+
+            for key in katalog_konser.keys():
+                list_harga.append(katalog_konser[key]['Harga'])
+
+            if filter_harga == 1:
+                list_harga.sort(reverse=True)
+
+                print("List Harga Tiket Konser Dari Yang Tertinggi :")
+                for i in range(0, len(list_harga)):
+                    print('%d. %d' % (i+1, list_harga[i]))
+
+                pilihan_harga = int(input("Masukkan Nomor Harga Yang Dipilih(1/2/3/4): "))
+                if pilihan_harga == 1:
+                    print(tamp)
+                    for key in katalog_konser.keys():
+                        if katalog_konser[key]['Harga'] == 1500000:
+                            current_harga = katalog_konser[key]['Harga']
+                            formatter(katalog_konser[key])
+                elif pilihan_harga == 2:
+                    print(tamp)
+                    for key in katalog_konser.keys():
+                        if katalog_konser[key]['Harga'] == 1300000:
+                            current_harga = katalog_konser[key]['Harga']
+                            formatter(katalog_konser[key])
+                elif pilihan_harga == 3:
+                    print(tamp)
+                    for key in katalog_konser.keys():
+                        if katalog_konser[key]['Harga'] == 1200000:
+                            current_harga = katalog_konser[key]['Harga']
+                            formatter(katalog_konser[key])
+                elif pilihan_harga == 4:
+                    print(tamp)
+                    for key in katalog_konser.keys():
+                        if katalog_konser[key]['Harga'] == 500000:
+                            current_harga = katalog_konser[key]['Harga']
+                            formatter(katalog_konser[key])
+                else:
+                    print("\nMaaf Pilihan yang Anda Masukkan Salah")
+
+
+            elif filter_harga == 2:
+                list_harga.sort()
+
+                print("List Harga Tiket Konser Dari Yang Terendah :")
+                for i in range(0, len(list_harga)):
+                    print('%d. %d' % (i+1, list_harga[i]))
+
+                pilihan_harga = int(input("Masukkan Nomor Harga Yang Dipilih(1/2/3/4): "))
+                if pilihan_harga == 1:
+                    print(tamp)
+                    for key in katalog_konser.keys():
+                        if katalog_konser[key]['Harga'] == 500000:
+                            current_harga = katalog_konser[key]['Harga']
+                            formatter(katalog_konser[key])
+                elif pilihan_harga == 2:
+                    print(tamp)
+                    for key in katalog_konser.keys():
+                        if katalog_konser[key]['Harga'] == 1200000:
+                            current_harga = katalog_konser[key]['Harga']
+                            formatter(katalog_konser[key])
+                elif pilihan_harga == 3:
+                    print(tamp)
+                    for key in katalog_konser.keys():
+                        if katalog_konser[key]['Harga'] == 1300000:
+                            current_harga = katalog_konser[key]['Harga']
+                            formatter(katalog_konser[key])
+                elif pilihan_harga == 4:
+                    print(tamp)
+                    for key in katalog_konser.keys():
+                        if katalog_konser[key]['Harga'] == 1500000:
+                            current_harga = katalog_konser[key]['Harga']
+                            formatter(katalog_konser[key])
+                else:
+                    print("\nMaaf Pilihan yang Anda Masukkan Salah")
+
+            else:
+                print("\nMaaf Pilihan yang Anda Masukkan Salah")
+
 
     #Menu pembatalan tiket
     elif pilihan_menu==2:
