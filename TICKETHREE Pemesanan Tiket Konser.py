@@ -281,51 +281,57 @@ Filter Harga Berdasarkan\t:
             mainmenu()
     else:
         exit()
+# pemesanan tiket
+    syarat_ketentuan = ("Syarat dan ketentuan :" 
+                       "\n1. Pembeli tiket yang akan menonton konser harus berusia 17 tahun keatas dan memiliki KTP." 
+                       "\n2. Saat akan memasuki Acara pemegang tiket wajib menunjukkan KTP , serta menyertai bukti pembelian yang sah apabila diperlukan." 
+                       "\n3. Anak-anak atau Anak-anak tanpa tiket tidak diizinkan memasuki Acara." 
+                       "\n4. Setiap Pemegang Tiket yang memasuki Acara diwajibkan untuk patuh pada peraturan, ketentuan dan kondisi yang berlaku di Tempat Acara.")
+
+    biaya_adm = 3000
+    banyak_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan : "))
+    database = []
+    print()
+
+    for i in range(int(banyak_tiket)):
+        print('biodata', i + 1)
+        entry = {
+            'nama': input('Nama: '),
+            'telepon': input('Telepon: '),
+            'email': input('Email: '),
+            'ktp': input('No Ktp: '),
+            'usia': int(input('Usia: '))
+        }
+        print()
+        database.append(entry)
+
+
+    for i, entry in enumerate(database):
+        print('biodata', i + 1)
+        if len(entry['ktp']) != 16 or entry['usia'] <= 16:
+            print('==Maaf anda belum memenuhi persyaratan terdapat data ktp atau usia yang tidak valid. silahkan kembali ke menu awal==',syarat_ketentuan,'\n')
+        else:
+            formatter(entry)
+        print()
+
+    total_biaya = (banyak_tiket * current_harga) * 1.05 + biaya_adm
+
+    pilihan1 = input("Apakah data diri sudah sesuai (ya/tidak) :")
+    if pilihan1 == "ya":
+        print("Tunggu sebentar...")
+        time.sleep(2)
+        pilihan2 = input("Melanjutkan ke proses transaksi (ya/tidak) :")
+        if pilihan2 == "ya":
+            print(total_biaya)
+        else:
+            print("========Terima kasih telah menggunakan program TICKETHREE========")
+    else:
+        print("Tunggu sebentar...")
+        time.sleep(2)
+        print("tidak valid")
 
 if __name__ == '__main__':
     mainmenu()
-
-
-
-#pemesanan tiket
-biaya_adm = 3000
-
-num_array = list()
-banyak_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan : "))
-print("Nasukan nama Pemesan : ")
-for i in range(int(banyak_tiket)):
-    i += 1
-    n = input("Nama orang ke {} :".format(i))
-    num_array.append(str(n))
-print("Masukkan nomor telepon :")
-for i in range(int(banyak_tiket)):
-    i += 1
-    n = input("No telepon orang ke {} :".format(i))
-    num_array.append(str(n))
-print("Masukkan email:")
-for i in range(int(banyak_tiket)):
-    i += 1
-    n = input("Email orang ke  {} :".format(i))
-    num_array.append(str(n))
-print("Masukkan No KTP :")
-for i in range(int(banyak_tiket)):
-    i += 1
-    n = input("No KTP orang ke  {} :".format(i))
-    num_array.append(str(n))
-print("Masukkan Usia :")
-for i in range(int(banyak_tiket)):
-    i += 1
-    n = input("Usia orang ke{} :".format(i))
-    num_array.append(str(n))
-total_biaya = banyak_tiket * harga_tiket * 0.05 + biaya_adm
-os.system('cls')
-print("\n----------------------------------------------")
-print("Anda telah berhasil melakukan pembelian tiket ")
-print("----------------------------------------------")
-print("Nama Pemesan :".format(len(num_array)))
-for a in num_array:
-    print(("- {}").format(a))
-print("Total Harga", "Rp.", (total_biaya))
 
 # informasi paket dan promo tiap bank
 promo_BNI = 0.03
