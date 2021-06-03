@@ -3,372 +3,156 @@ loop = True
 
 #Memulai Program TICKETHREE
 #Menampilkan program
-tampilan = "Selamat Datang di Program TICKETHREE Aplikasi Pemesanan Tiket Konser Online"
+tampilan = 'Selamat Datang di Program TICKETHREE Aplikasi Pemesanan Tiket Konser Online'
 s=tampilan.center(120, "=")
 print(s)
 
+katalog_konser={
+    'Katalog_1':{'Nama Acara':'We The Fest', 'Artis': 'Dipha Barus,Weird Genius,Roni & Joni,Cyda', 'Tanggal':'Jumat, 11 Juni 2021', 'Kota':'Medan', 'Tempat': 'Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman', 'Genre':'EDM', 'Harga':1200000, 'Status\t': '>100'},
+    'Katalog_2':{'Nama Acara':'Indigo Fest', 'Artis': 'Fourtwenty,Burgerkill,Bottlesmoker,Mocca', 'Tanggal':'Minggu, 20 Juni 2021', 'Kota':'Riau', 'Tempat': 'Kompleks Bandar Seni Raja Ali Haji Purna', 'Genre':'Indie', 'Harga':1300000, 'Status': '<100'},
+    'Katalog_3':{'Nama Acara':'Java Jazz Fest', 'Artis': 'Tulus,Indra Lesmana,Maliq & DEssentials,Andien', 'Tanggal':'Senin, 28 Juni 2021', 'Kota':'Surabaya', 'Tempat': 'Tunjungan Plaza Convention Center', 'Genre':'Jazz', 'Harga':1500000,'Status':'<100'},
+    'Katalog_4':{'Nama Acara':'Lalala Fest', 'Artis': 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush', 'Tanggal':'Sabtu, 5 Juni 2021', 'Kota':'Jakarta', 'Tempat': 'Aula Simfonia 81 Jln. Industri Raya Blok B14', 'Genre':'Pop', 'Harga':500000, 'Status': '>100'}
+}
+
+tamp ="""\n======================================
+Informasi Pemesanan Tiket Konser 'TICKETHREE'
+======================================"""
+
+def formatter(katalog):
+    for key in katalog.keys():
+        print(f"""{key}= {katalog[key]}""")
+
 #Menampilkan menu program TICKETHREE
+def mainmenu():
+    print("""Menu Program\t\t: 
+1.Menu Pembelian Tiket Konser
+2.Menu Pembatalan Tiket konser""")
+    v='='*len(s)
+    print(v)
+    #Menginputkan menu yang diinginkan
+    pilihan_menu = int(input("Ketik Menu Program\t:"))
+    if pilihan_menu == 1:
+        print("""
+\n==================================================
+Filter Konser Berdasarkan\t:
+1. Genre
+2. Artis
+3. Kota
+4. Harga
+\n=================================================""")
+        
+        filter_pilihan= int(input("Ketik Filter Konser Yang Anda Inginkan (1/2/3/4)\t:"))
 
-print("Menu Program\t\t: ")
-print("1. \t Menu Pembelian Tiket Konser")
-print("2. \t Menu Pembatalan Tiket konser")
-print("="*len(s))
-print("")
+        #Berdasarkan Genre
+        if filter_pilihan ==1:
+            #Menampilkan list berdasar genre
+            print("""
+\n=================================================
+List Konser Berdasar Genre:
+1. EDM
+2. Indie
+3. Jazz
+4. Pop
+""")
+            list_genre= int(input("Ketik List Konser Genre (1/2/3/4)\t: "))
+            if list_genre==1:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Genre'] == 'EDM':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
 
-#Menginputkan menu yang diinginkan
-pilihan_menu = int(input("Ketik Menu Program\t:"))
-if pilihan_menu == 1:
-    print("Filter Konser Berdasarkan: ")
-    print("\n==================================================")
-    print("1. Genre")
-    print("2. Artis")
-    print("3. Kota")
-    print("4. Harga")
-    filter = input("Pilih Filter Yang Anda Inginkan: ")
-    print("\n==================================================")
-    if filter == "1":
-         print("\n==================================================")
-         print("Menampilkan Hasil Pencarian Berdasarkan Genre :")
-         print("1. EDM")
-         print("2. Indie")
-         print("3. Jazz")
-         print("4. Pop")
-         genre = input("Masukkan Nomor Genre Yang Anda Inginkan : ")
-         print("\n==================================================")
-         if genre == "1":
-            print("\n===========================================================")
-            print("Nama Acara  : We The Fest")
-            print("Nama Artis  : Dipha Barus")
-            print("              Weird Genius")
-            print("              Roni & Joni")
-            print("              Cyda")
-            print("Hari,Tanggal: Jumat, 11 Juni 2021 ")
-            print("Kota        : Medan")
-            print("Tempat      : Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman")
-            print("Genre       : EDM")
-            print("Harga Tiket : Rp 1.200.000,00")
-            print("Status      : Tersisa >100")
-            print("\n============================================================")
-         elif genre == "2":
-            print("\n===========================================================")
-            print("Nama Acara  : Indigo Fest")
-            print("Nama Artis  : Fourtwenty")
-            print("              Burgerkill")
-            print("              Bottlesmoker")
-            print("              Mocca")
-            print("Hari,Tanggal: Minggu, 20 Juni 2021 ")
-            print("Kota        : Riau")
-            print("Tempat      : Kompleks Bandar Seni Raja Ali Haji Purna")
-            print("Genre       : Indie")
-            print("Harga Tiket : Rp 1.300.000,00")
-            print("Status      : Tersisa <100")
-            print("\n============================================================")
-         elif genre == "3":
-            print("\n===========================================================")
-            print("Nama Acara  : Java Jazz Fest")
-            print("Nama Artis  : Tulus")
-            print("              Indra Lesmana")
-            print("              Maliq & D'Essentials")
-            print("              Andien")
-            print("Hari,Tanggal: Senin, 28 Juni 2021 ")
-            print("Kota        : Surabaya")
-            print("Tempat      : Tunjungan Plaza Convention Center")
-            print("Genre       : Jazz")
-            print("Harga Tiket : Rp 1.500.000,00")
-            print("Status      : Tersisa <100")
-            print("\n============================================================")
-         else:
-            print("\n===========================================================")
-            print("Nama Acara  : Lalala Fest")
-            print("Nama Artis  : Ardhito Pramono")
-            print("              Isyana Sarasvati")
-            print("              Yura Yunita")
-            print("              Crush")
-            print("Hari,Tanggal: Sabtu, 5 Juni 2021 ")
-            print("Kota        : Jakarta")
-            print("Tempat      : Aula Simfonia 81 Jln. Industri Raya Blok B14")
-            print("Genre       : Pop")
-            print("Harga Tiket : Rp 500.000,00")
-            print("Status      : Tersisa >100")
-            print("\n============================================================")
-    elif filter == "2":
-        print("\n==================================================")
-        print("Menampilkan Hasil Pencarian Berdasarkan Nama Artis :")
-        print("1. Ardhito Pramono")
-        print("2. Dipha Barus")
-        print("3. Fourtwenty")
-        print("4. Tulus")
-        artis = input("Masukkan Nomor Artis Yang Anda Inginkan : ")
-        print("\n==================================================")
-        if artis == "1":
-            print("\n===========================================================")
-            print("Nama Acara  : Lalala Fest")
-            print("Nama Artis  : Ardhito Pramono")
-            print("              Isyana Sarasvati")
-            print("              Yura Yunita")
-            print("              Crush")
-            print("Hari,Tanggal: Sabtu, 5 Juni 2021 ")
-            print("Kota        : Jakarta")
-            print("Tempat      : Aula Simfonia 81 Jln. Industri Raya Blok B14")
-            print("Genre       : Pop")
-            print("Harga Tiket : Rp 500.000,00")
-            print("Status      : Tersisa >100")
-            print("\n============================================================")
-        elif artis == "2":
-            print("\n===========================================================")
-            print("Nama Acara  : We The Fest")
-            print("Nama Artis  : Dipha Barus")
-            print("              Weird Genius")
-            print("              Roni & Joni")
-            print("              Cyda")
-            print("Hari,Tanggal: Jumat, 11 Juni 2021 ")
-            print("Kota        : Medan")
-            print("Tempat      : Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman")
-            print("Genre       : EDM")
-            print("Harga Tiket : Rp 1.200.000,00")
-            print("Status      : Tersisa >100")
-            print("\n============================================================")
-        elif artis == "3":
-            print("\n===========================================================")
-            print("Nama Acara  : Indigo Fest")
-            print("Nama Artis  : Fourtwenty")
-            print("              Burgerkill")
-            print("              Bottlesmoker")
-            print("              Mocca")
-            print("Hari,Tanggal: Minggu, 20 Juni 2021 ")
-            print("Kota        : Riau")
-            print("Tempat      : Kompleks Bandar Seni Raja Ali Haji Purna")
-            print("Genre       : Indie")
-            print("Harga Tiket : Rp 1.300.000,00")
-            print("Status      : Tersisa <100")
-            print("\n============================================================")
-        else:
-            print("\n===========================================================")
-            print("Nama Acara  : Java Jazz Fest")
-            print("Nama Artis  : Tulus")
-            print("              Indra Lesmana")
-            print("              Maliq & D'Essentials")
-            print("              Andien")
-            print("Hari,Tanggal: Senin, 28 Juni 2021 ")
-            print("Kota        : Surabaya")
-            print("Tempat      : Tunjungan Plaza Convention Center")
-            print("Genre       : Jazz")
-            print("Harga Tiket : Rp 1.500.000,00")
-            print("Status      : Tersisa <100")
-            print("\n============================================================")
-    elif filter == "3":
-        print("\n==================================================")
-        print("Menampilkan Hasil Pencarian Berdasarkan Nama Kota:")
-        print("1. Jakarta")
-        print("2. Medan")
-        print("3. Riau")
-        print("4. Surabaya")
-        kota = input("Masukkan Nomor Kota Yang Anda Inginkan : ")
-        print("\n==================================================")
-        if kota == "1":
-            print("\n===========================================================")
-            print("Nama Acara  : Lalala Fest")
-            print("Nama Artis  : Ardhito Pramono")
-            print("              Isyana Sarasvati")
-            print("              Yura Yunita")
-            print("              Crush")
-            print("Hari,Tanggal: Sabtu, 5 Juni 2021 ")
-            print("Kota        : Jakarta")
-            print("Tempat      : Aula Simfonia 81 Jln. Industri Raya Blok B14")
-            print("Genre       : Pop")
-            print("Harga Tiket : Rp 500.000,00")
-            print("Status      : Tersisa >100")
-            print("\n============================================================")
-        elif kota == "2":
-            print("\n===========================================================")
-            print("Nama Acara  : We The Fest")
-            print("Nama Artis  : Dipha Barus")
-            print("              Weird Genius")
-            print("              Roni & Joni")
-            print("              Cyda")
-            print("Hari,Tanggal: Jumat, 11 Juni 2021 ")
-            print("Kota        : Medan")
-            print("Tempat      : Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman")
-            print("Genre       : EDM")
-            print("Harga Tiket : Rp 1.200.000,00")
-            print("Status      : Tersisa >100")
-            print("\n============================================================")
-        elif kota == "3":
-            print("\n===========================================================")
-            print("Nama Acara  : Indigo Fest")
-            print("Nama Artis  : Fourtwenty")
-            print("              Burgerkill")
-            print("              Bottlesmoker")
-            print("              Mocca")
-            print("Hari,Tanggal: Minggu, 20 Juni 2021 ")
-            print("Kota        : Riau")
-            print("Tempat      : Kompleks Bandar Seni Raja Ali Haji Purna")
-            print("Genre       : Indie")
-            print("Harga Tiket : Rp 1.300.000,00")
-            print("Status      : Tersisa <100")
-            print("\n============================================================")
-        else:
-            print("\n===========================================================")
-            print("Nama Acara  : Java Jazz Fest")
-            print("Nama Artis  : Tulus")
-            print("              Indra Lesmana")
-            print("              Maliq & D'Essentials")
-            print("              Andien")
-            print("Hari,Tanggal: Senin, 28 Juni 2021 ")
-            print("Kota        : Surabaya")
-            print("Tempat      : Tunjungan Plaza Convention Center")
-            print("Genre       : Jazz")
-            print("Harga Tiket : Rp 1.500.000,00")
-            print("Status      : Tersisa <100")
-            print("\n============================================================")
-    else:
-        print("\n==================================================")
-        print("Silahkan Pilih Pencarian Berdasarkan Harga Tertinggi/Terendah:")
-        print("1. Tertinggi->")
-        print("2. Terendah<-")
-        m = input("Masukkan Nomor Yang Anda Inginkan : ")
-        print("\n==================================================")
-        if m == "1":
-            print("\n==================================================")
-            print("Menampilkan Hasil Pencarian Berdasarkan Harga Tertinggi:")
-            print("1. Rp 1.500.000,00")
-            print("2. Rp 1.300.000,00")
-            print("3. Rp 1.200.000,00")
-            print("4. Rp   500.000,00")
-            harga1 = input("Masukkan Nomor Yang Anda Inginkan : ")
-            print("\n==================================================")
-            if harga1==  "1":
-                print("\n===========================================================")
-                print("Nama Acara  : Java Jazz Fest")
-                print("Nama Artis  : Tulus")
-                print("              Indra Lesmana")
-                print("              Maliq & D'Essentials")
-                print("              Andien")
-                print("Hari,Tanggal: Senin, 28 Juni 2021 ")
-                print("Kota        : Surabaya")
-                print("Tempat      : Tunjungan Plaza Convention Center")
-                print("Genre       : Jazz")
-                print("Harga Tiket : Rp 1.500.000,00")
-                print("Status      : Tersisa <100")
-                print("\n============================================================")
-            elif harga1 =="2":
-                print("\n===========================================================")
-                print("Nama Acara  : Indigo Fest")
-                print("Nama Artis  : Fourtwenty")
-                print("              Burgerkill")
-                print("              Bottlesmoker")
-                print("              Mocca")
-                print("Hari,Tanggal: Minggu, 20 Juni 2021 ")
-                print("Kota        : Riau")
-                print("Tempat      : Kompleks Bandar Seni Raja Ali Haji Purna")
-                print("Genre       : Indie")
-                print("Harga Tiket : Rp 1.300.000,00")
-                print("Status      : Tersisa <100")
-                print("\n============================================================")
-            elif harga1 =="3":
-                print("\n===========================================================")
-                print("Nama Acara  : We The Fest")
-                print("Nama Artis  : Dipha Barus")
-                print("              Weird Genius")
-                print("              Roni & Joni")
-                print("              Cyda")
-                print("Hari,Tanggal: Jumat, 11 Juni 2021 ")
-                print("Kota        : Medan")
-                print("Tempat      : Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman")
-                print("Genre       : EDM")
-                print("Harga Tiket : Rp 1.200.000,00")
-                print("Status      : Tersisa >100")
-                print("\n============================================================")
+            elif list_genre==2:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Genre'] == 'Indie':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+
+            elif list_genre==3:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Genre'] == 'Jazz':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+
+            elif list_genre==4:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Genre'] == 'Pop':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
             else:
-                print("\n===========================================================")
-                print("Nama Acara  : Lalala Fest")
-                print("Nama Artis  : Ardhito Pramono")
-                print("              Isyana Sarasvati")
-                print("              Yura Yunita")
-                print("              Crush")
-                print("Hari,Tanggal: Sabtu, 5 Juni 2021 ")
-                print("Kota        : Jakarta")
-                print("Tempat      : Aula Simfonia 81 Jln. Industri Raya Blok B14")
-                print("Genre       : Pop")
-                print("Harga Tiket : Rp 500.000,00")
-                print("Status      : Tersisa >100")
-                print("\n============================================================")
-        else:
-            print("\n==================================================")
-            print("Menampilkan Hasil Pencarian Berdasarkan Harga Terendah:")
-            print("1. Rp   500.000,00")
-            print("2. Rp 1.200.000,00")
-            print("3. Rp 1.300.000,00")
-            print("4. Rp 1.500.000,00")
-            harga2 = input("Masukkan Nomor Yang Anda Inginkan : ")
-            print("\n==================================================")
-            if harga2 == "1":
-                print("\n===========================================================")
-                print("Nama Acara  : Lalala Fest")
-                print("Nama Artis  : Ardhito Pramono")
-                print("              Isyana Sarasvati")
-                print("              Yura Yunita")
-                print("              Crush")
-                print("Hari,Tanggal: Sabtu, 5 Juni 2021 ")
-                print("Kota        : Jakarta")
-                print("Tempat      : Aula Simfonia 81 Jln. Industri Raya Blok B14")
-                print("Genre       : Pop")
-                print("Harga Tiket : Rp 500.000,00")
-                print("Status      : Tersisa >100")
-                print("\n============================================================")
-            elif harga2 == "2":
-                print("\n===========================================================")
-                print("Nama Acara  : We The Fest")
-                print("Nama Artis  : Dipha Barus")
-                print("              Weird Genius")
-                print("              Roni & Joni")
-                print("              Cyda")
-                print("Hari,Tanggal: Jumat, 11 Juni 2021 ")
-                print("Kota        : Medan")
-                print("Tempat      : Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman")
-                print("Genre       : EDM")
-                print("Harga Tiket : Rp 1.200.000,00")
-                print("Status      : Tersisa >100")
-                print("\n============================================================")
-            elif harga2 == "3":
-                print("\n===========================================================")
-                print("Nama Acara  : Indigo Fest")
-                print("Nama Artis  : Fourtwenty")
-                print("              Burgerkill")
-                print("              Bottlesmoker")
-                print("              Mocca")
-                print("Hari,Tanggal: Minggu, 20 Juni 2021 ")
-                print("Kota        : Riau")
-                print("Tempat      : Kompleks Bandar Seni Raja Ali Haji Purna")
-                print("Genre       : Indie")
-                print("Harga Tiket : Rp 1.300.000,00")
-                print("Status      : Tersisa <100")
-                print("\n============================================================")
-            else:
-                print("\n===========================================================")
-                print("Nama Acara  : Java Jazz Fest")
-                print("Nama Artis  : Tulus")
-                print("              Indra Lesmana")
-                print("              Maliq & D'Essentials")
-                print("              Andien")
-                print("Hari,Tanggal: Senin, 28 Juni 2021 ")
-                print("Kota        : Surabaya")
-                print("Tempat      : Tunjungan Plaza Convention Center")
-                print("Genre       : Jazz")
-                print("Harga Tiket : Rp 1.500.000,00")
-                print("Status      : Tersisa <100")
-                print("\n============================================================")
+                print("\nMaaf Pilihan yang Anda Masukkan Salah")
 
-#Pilihan Pembatalan Tiket
-else:
-    proses_pembatalan= input("Masukkan Kode Unik Tiket Anda: ")
-    print(proses_pembatalan)
-    konfirm_batal= input("Apakah anda sudah yakin melakukan pembatalan?(Y/T):")
-    if konfirm_batal.upper()=="Y":
-        print("Tiket Anda Telah Dibatalkan, Refund akan dikirim melalui metode pembayaran dengan potongan 20%")
+        #Berdasarkan Artis
+        elif filter_pilihan == 2:
+            # Menampilkan list berdasar artis
+            print("""
+\n================================================
+List Konser Berdasar Artis:
+1. Ardhito Pramono
+2. Dipha Barus
+3. Fourtwenty
+4. Tulus
+""")
+            list_artis = int(input("Ketik List Konser Berdasar Artis (1/2/3/4)\t: "))
+            if list_artis == 1:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Artis'][0] == 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+            elif list_artis ==2:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Artis'] == 'Dipha Barus,Weird Genius,Roni & Joni,Cyda':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+            elif list_artis ==3:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Artis'] == 'Fourtwenty,Burgerkill,Bottlesmoker,Mocca':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+            elif list_artis ==4:
+                print(tamp)
+                for key in katalog_konser.keys():
+                    if katalog_konser[key]['Artis'] == 'Tulus,Indra Lesmana,Maliq & DEssentials,Andien':
+                        current_harga = katalog_konser[key]['Harga']
+                        print(formatter(katalog_konser[key]))
+            else:
+                print("\nMaaf Pilihan yang Anda Masukkan Salah")
+
+        # Berdasarkan Kota
+        elif filter_pilihan ==3:
+            print("Bagiannya Afiq")
+        # Berdasarkan Harga
+        elif filter_pilihan ==4:
+            print("Lanjut Afiq")
+        else:
+            mainmenu()
+
+    #Menu pembatalan tiket
+    elif pilihan_menu==2:
+        proses_pembatalan = input("Masukkan Kode Unik Tiket Anda: ")
+        list_kodeunik= list(proses_pembatalan)
+        if len(list_kodeunik) ==7:
+            konfirm_batal = input("Apakah anda sudah yakin melakukan pembatalan?(Y/T):")
+            if konfirm_batal.upper() == "Y":
+                print("\nTiket Anda Telah Dibatalkan, Refund akan dikirim melalui metode pembayaran dengan potongan 20%")
+            else:
+                mainmenu()
+        else:
+            print("\nMaaf Kode yang Anda Masukkan Salah")
 
     else:
-       exit()
+        exit()
+
+if __name__ == '__main__':
+    mainmenu()
+
+
 
 #pemesanan tiket
 biaya_adm = 3000
