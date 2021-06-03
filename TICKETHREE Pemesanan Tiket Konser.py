@@ -43,7 +43,7 @@ def mainmenu():
     v = '=' * len(s)
     print(v)
     # Menginputkan menu yang diinginkan
-    pilihan_menu = int(input("Ketik Menu Program\t:"))
+    pilihan_menu = int(input("Ketik Menu Program (1/2)\t:"))
     if pilihan_menu == 1:
         print("""
 \n==================================================
@@ -277,7 +277,7 @@ Filter Harga Berdasarkan\t:
             else:
                 mainmenu()
         else:
-            print("\nMaaf Kode yang Anda Masukkan Salah")
+            print("\nMaaf Kode yang Anda Masukkan Salah\n")
             mainmenu()
     else:
         exit()
