@@ -448,7 +448,7 @@ Silahkan pilih metode pembayaran dengan memasukkan nomor dari list di atas :
     2. Gopay
     ------------------------------------                   
                         """)
-            pilonline = int(input("Silahkan pilih aplikasi online dengan memasukkan abjad dari list diatas :"))
+            pilonline = int(input("Silahkan pilih aplikasi online dengan memasukkan nomor dari list diatas :"))
             if pilonline == 1:
                 print("NO SHOPEEPAY")
                 biaya_akhir = (biaya1 * promo_shopeepay) + biaya1  or (total_biaya * promo_shopeepay) + total_biaya
