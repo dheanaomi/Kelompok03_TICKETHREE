@@ -25,9 +25,9 @@ katalog_konser = {
                   'Status': '>100'}
 }
 
-tamp = """\n======================================
+tamp = """\n=================================================
 Informasi Pemesanan Tiket Konser 'TICKETHREE'
-======================================"""
+================================================="""
 
 
 def formatter(katalog):
@@ -320,15 +320,19 @@ Filter Harga Berdasarkan\t:
     if pilihan1 == "ya":
         print("Tunggu sebentar...")
         time.sleep(2)
-        pilihan2 = input("Melanjutkan ke proses transaksi (ya/tidak) :")
+        pilihan2 = input("\nMelanjutkan ke proses transaksi (ya/tidak) :")
         if pilihan2 == "ya":
-            print(total_biaya)
+            time.sleep(1)
+            print("\nBiaya :", total_biaya)
+            print("Tunggu sebentar...\n")
+            time.sleep(2)
         else:
             print("========Terima kasih telah menggunakan program TICKETHREE========")
     else:
         print("Tunggu sebentar...")
         time.sleep(2)
         print("tidak valid")
+
 
 if __name__ == '__main__':
     mainmenu()
