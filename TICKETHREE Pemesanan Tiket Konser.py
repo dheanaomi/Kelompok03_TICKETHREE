@@ -387,6 +387,152 @@ while ulang == True:
                 print('\nInput Anda salah! Silahkan masukkan angka 1/2/3')
     
     elif merchandise == 2:
+            # informasi paket dan promo tiap bank
+    promo_BNI = 0.03
+    promo_Mandiri = 0.025
+    promo_BCA = 0.025
+    promo_shopeepay = 0.3
+    promo_gopay = 0.3
+    paket1 = 15000
+    paket2 = 85000
+    paket3 = 110000
+    
+    # PROGRAM PEMBELIAN MERCHANDISE
+    ulang = True 
+    while ulang == True:    
+        merchandise = int(input("""
+        ----------------------------------------------------
+        Disini kami menyediakan paket merchandise eksklusif 
+        untuk memeriahkan konser yang Anda pilih
+        ----------------------------------------------------
+        1. Lighstick 
+        2. Lighstick + kaos 
+        3. Lightstick + kaos + topi
+        ----------------------------------------------------
+        Apakah Anda akan membeli paket merchandise?
+        (Jika iya ketik 1, Jika tidak ketik 2) 
+        ----------------------------------------------------
+        """))
+    
+        if merchandise == 1:
+            pilih_paket = True
+            while pilih_paket == True:
+                paket = int(input('\n1. Lighstick\n2. Lighstick + kaos\n3. Lightstick + kaos + topi\nSilahkan pilih 1, 2, atau 3 :\n'))
+                if paket == 1:
+                    biaya1 =  total_biaya + paket1
+                    print('\nTotal biaya = ', biaya1)
+                    pilih_paket = False 
+                    ulang = False
+                elif paket == 2:
+                    biaya1 = total_biaya + paket2
+                    print('\nTotal biaya = ', biaya1 )
+                    pilih_paket = False
+                    ulang = False
+                elif paket == 3:
+                    biaya1 = total_biaya + paket3
+                    print('\nTotal biaya = ', biaya1)
+                    pilih_paket = False
+                    ulang = False
+                else:
+                    print('\nInput Anda salah! Silahkan masukkan angka 1/2/3')
+        
+        elif merchandise == 2:
+            biaya1 = total_biaya
+            print()
+            ulang = False
+    
+        else:
+            print("\nInput Anda salah! Silahkan coba lagi")
+            
+    # PROGRAM METODE PEMBAYARAN MELALUI BANK
+    
+    ulang = True 
+    while ulang == True:
+        pilihmetodepemb = int(input("""
+    ----------------------------------------------------
+    SELAMAT DATANG DI METODE PEMBAYARAN TICKETHREE
+    ----------------------------------------------------
+    Silahkan pilih metode pembayaran
+    1. Bank
+    2. Aplikasi Online
+    ----------------------------------------------------
+    Silahkan pilih metode pembayaran dengan memasukkan nomor dari list di atas :
+    """))
+    
+        if pilihmetodepemb == 1:
+            
+                print("""
+        ------------------------------------
+        PILIHAN BANK
+        ------------------------------------
+        1. BNI  
+        2. MANDIRI
+        3. BCA
+        ------------------------------------                   
+                            """)
+                pilbank = int(input("Silahkan pilih bank dengan memasukkan nomor dari list diatas :"))
+                if pilbank == 1:
+                    print("Rekening BNI")
+                    biaya_akhir = (biaya1 * promo_BNI) + biaya1  or (total_biaya * promo_BNI) + total_biaya
+                    print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                    ulang = False
+                elif pilbank == 2:
+                    print("Rekening Mandiri")
+                    biaya_akhir = (biaya1 * promo_Mandiri) + biaya1  or (total_biaya * promo_Mandiri) + total_biaya
+                    print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                    ulang = False
+                elif pilbank == 3:
+                    print("Rekening BCA")
+                    biaya_akhir = (biaya1 * promo_BCA) + biaya1  or (total_biaya * promo_BCA) + total_biaya
+                    print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                    ulang = False
+                else:
+                    print('\nAnda salah! coba lagi!')
+                
+        elif pilihmetodepemb == 2:
+            
+                print("""
+        ------------------------------------
+        PILIHAN APLIKASI ONLINE
+        ------------------------------------
+        1. Shopeepay
+        2. Gopay
+        ------------------------------------                   
+                            """)
+                pilonline = int(input("Silahkan pilih aplikasi online dengan memasukkan abjad dari list diatas :"))
+                if pilonline == 1:
+                    print("NO SHOPEEPAY")
+                    biaya_akhir = (biaya1 * promo_shopeepay) + biaya1  or (total_biaya * promo_shopeepay) + total_biaya
+                    print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                    ulang = False
+                elif pilonline == 2:
+                    print("NO GOPAY")
+                    biaya_akhir = (biaya1 * promo_gopay) + biaya1  or (total_biaya * promo_gopay) + total_biaya
+                    print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                    ulang = False
+                else:
+                    print('\nAnda salah! coba lagi!')
+            
+        else:
+            print('\nInput yang Anda masukkan salah! Silahkan coba lagi!')
+    
+    # Memunculkan kode transaksi
+    import random
+
+    bil = random.randint(999999, 9999999)
+    kode_unik = random.randint(99, 9999)
+    ulangi = True 
+    while ulangi == True:
+        print("------------- Kode transaksi Anda -------------\n",
+            "\n------------------ ", bil, " ------------------ ", 
+            "\n\nSilahkan lakukan pembayaran dengan kode tersebut\n")
+
+        bayar = int(input("Silahkan masukkan kode transaksi untuk melakukan pembayaran:\n"))
+        if bayar == bil :
+            print("\nSelamat! Transaksi sukses!\n")
+            ulangi = False 
+        else:
+            print('Kode yang Anda masukkan salah! Silahkan coba lagi!\n')
         print()
         ulang = False
 
