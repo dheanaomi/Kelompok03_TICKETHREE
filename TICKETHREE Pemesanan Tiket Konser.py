@@ -486,7 +486,6 @@ if __name__ == '__main__':
         print()
         ulang = False
 
-    else:
-        print("\nInput Anda salah! Silahkan coba lagi")
+   
         
 
