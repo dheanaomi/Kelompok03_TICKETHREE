@@ -422,17 +422,17 @@ if __name__ == '__main__':
                             """)
                 pilbank = int(input("Silahkan pilih bank dengan memasukkan nomor dari list diatas :"))
                 if pilbank == 1:
-                    print("Rekening BNI")
+                    print("Rekening BNI 0178305704")
                     biaya_akhir = (biaya1 * promo_BNI) + biaya1  or (total_biaya * promo_BNI) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
                 elif pilbank == 2:
-                    print("Rekening Mandiri")
+                    print("Rekening Mandiri 1560009861578")
                     biaya_akhir = (biaya1 * promo_Mandiri) + biaya1  or (total_biaya * promo_Mandiri) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
                 elif pilbank == 3:
-                    print("Rekening BCA")
+                    print("Rekening BCA 5220304312")
                     biaya_akhir = (biaya1 * promo_BCA) + biaya1  or (total_biaya * promo_BCA) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
@@ -451,12 +451,12 @@ if __name__ == '__main__':
                             """)
                 pilonline = int(input("Silahkan pilih aplikasi online dengan memasukkan abjad dari list diatas :"))
                 if pilonline == 1:
-                    print("NO SHOPEEPAY")
+                    print("0812 3135 2171")
                     biaya_akhir = (biaya1 * promo_shopeepay) + biaya1  or (total_biaya * promo_shopeepay) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
                 elif pilonline == 2:
-                    print("NO GOPAY")
+                    print("0812 6373 3323")
                     biaya_akhir = (biaya1 * promo_gopay) + biaya1  or (total_biaya * promo_gopay) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
