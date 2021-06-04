@@ -390,55 +390,76 @@ while ulang == True:
         print("\nInput Anda salah! Silahkan coba lagi")
         
 # PROGRAM METODE PEMBAYARAN MELALUI BANK
-print("""
+
+ulang = True 
+while ulang == True:
+    pilihmetodepemb = int(input("""
 ----------------------------------------------------
 SELAMAT DATANG DI METODE PEMBAYARAN TICKETHREE
 ----------------------------------------------------
 Silahkan pilih metode pembayaran
-a. Bank
-b. Aplikasi Online
+1. Bank
+2. Aplikasi Online
 ----------------------------------------------------
-            """)
-pilihmetodepemb = input("Silahkan pilih metode pembayaran dengan memasukkan abjad dari list di atas :")
+Silahkan pilih metode pembayaran dengan memasukkan nomor dari list di atas :
+"""))
 
-if pilihmetodepemb == "a" or pilihmetodepemb == "A":
-        print("""
-------------------------------------
-PILIHAN BANK
-------------------------------------
-a. BNI  
-b. MANDIRI
-c. BCA
-------------------------------------                   
-                    """)
-        pilbank = input("Silahkan pilih bank dengan memasukkan abjad dari list diatas :")
-        if pilbank == "a" or pilbank == "A":
-            print("Rekening BNI")
-            biaya_akhir = (biaya1 * promo_BNI) + biaya1  or (total_biaya * promo_BNI) + total_biaya
-        elif pilbank == "b" or pilbank == "B":
-            print("Rekening Mandiri")
-            biaya_akhir = (biaya1 * promo_Mandiri) + biaya1  or (total_biaya * promo_Mandiri) + total_biaya
-        else:
-            print("Rekening BCA")
-            biaya_akhir = (biaya1 * promo_BCA) + biaya1  or (total_biaya * promo_BCA) + total_biaya
-        print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
-else:
-        print("""
-------------------------------------
-PILIHAN APLIKASI ONLINE
-------------------------------------
-a. Shopeepay
-b. Gopay
-------------------------------------                   
-                    """)
-        pilonline = input("Silahkan pilih aplikasi online dengan memasukkan abjad dari list diatas :")
-        if pilonline == "a" or pilonline == "A":
-            print("NO SHOPEEPAY")
-            biaya_akhir = (biaya1 * promo_shopeepay) + biaya1  or (total_biaya * promo_shopeepay) + total_biaya
-        else:
-            print("NO GOPAY")
-            biaya_akhir = (biaya1 * promo_gopay) + biaya1  or (total_biaya * promo_gopay) + total_biaya
-        print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+    if pilihmetodepemb == 1:
+        
+            print("""
+    ------------------------------------
+    PILIHAN BANK
+    ------------------------------------
+    1. BNI  
+    2. MANDIRI
+    3. BCA
+    ------------------------------------                   
+                        """)
+            pilbank = int(input("Silahkan pilih bank dengan memasukkan nomor dari list diatas :"))
+            if pilbank == 1:
+                print("Rekening BNI")
+                biaya_akhir = (biaya1 * promo_BNI) + biaya1  or (total_biaya * promo_BNI) + total_biaya
+                print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                ulang = False
+            elif pilbank == 2:
+                print("Rekening Mandiri")
+                biaya_akhir = (biaya1 * promo_Mandiri) + biaya1  or (total_biaya * promo_Mandiri) + total_biaya
+                print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                ulang = False
+            elif pilbank == 3:
+                print("Rekening BCA")
+                biaya_akhir = (biaya1 * promo_BCA) + biaya1  or (total_biaya * promo_BCA) + total_biaya
+                print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                ulang = False
+            else:
+                print('\nAnda salah! coba lagi!')
+            
+    elif pilihmetodepemb == 2:
+        
+            print("""
+    ------------------------------------
+    PILIHAN APLIKASI ONLINE
+    ------------------------------------
+    1. Shopeepay
+    2. Gopay
+    ------------------------------------                   
+                        """)
+            pilonline = int(input("Silahkan pilih aplikasi online dengan memasukkan abjad dari list diatas :"))
+            if pilonline == 1:
+                print("NO SHOPEEPAY")
+                biaya_akhir = (biaya1 * promo_shopeepay) + biaya1  or (total_biaya * promo_shopeepay) + total_biaya
+                print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                ulang = False
+            elif pilonline == 2:
+                print("NO GOPAY")
+                biaya_akhir = (biaya1 * promo_gopay) + biaya1  or (total_biaya * promo_gopay) + total_biaya
+                print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
+                ulang = False
+            else:
+                print('\nAnda salah! coba lagi!')
+        
+    else:
+        print('\nInput yang Anda masukkan salah! Silahkan coba lagi!')
 
 # Memunculkan kode transaksi
 import random
