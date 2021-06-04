@@ -445,12 +445,15 @@ import random
 
 bil = random.randint(999999, 9999999)
 kode_unik = random.randint(99, 9999)
-print("------------ Kode transaksi Anda ------------\n",
-      "\n------------------ ", bil, " ------------------ ", 
-    "\n\nSilahkan lakukan pembayaran dengan kode tersebut\n")
+ulangi = True 
+while ulangi == True:
+    print("------------- Kode transaksi Anda -------------\n",
+        "\n------------------ ", bil, " ------------------ ", 
+        "\n\nSilahkan lakukan pembayaran dengan kode tersebut\n")
 
-bayar = int(input("Silahkan masukkan kode transaksi untuk melakukan pembayaran:\n"))
-if bayar == bil :
-     print("\nSelamat! Transaksi sukses!\n")
-else:
-    print('Kode yang Anda masukkan salah! Silahkan coba lagi!\n')
+    bayar = int(input("Silahkan masukkan kode transaksi untuk melakukan pembayaran:\n"))
+    if bayar == bil :
+        print("\nSelamat! Transaksi sukses!\n")
+        ulangi = False 
+    else:
+        print('Kode yang Anda masukkan salah! Silahkan coba lagi!\n')
