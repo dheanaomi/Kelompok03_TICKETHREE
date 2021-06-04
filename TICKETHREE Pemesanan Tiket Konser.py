@@ -113,7 +113,7 @@ List Konser Berdasar Artis:
             if list_artis == 1:
                 print(tamp)
                 for key in katalog_konser.keys():
-                    if katalog_konser[key]['Artis'][0] == 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush':
+                    if katalog_konser[key]['Artis'] == 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush':
                         current_harga = katalog_konser[key]['Harga']
                         print(formatter(katalog_konser[key]))
             elif list_artis == 2:
