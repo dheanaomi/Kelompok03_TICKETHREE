@@ -344,32 +344,51 @@ paket2 = 85000
 paket3 = 110000
 
 # PROGRAM PEMBELIAN MERCHANDISE
-print('\n Disini kami menyediakan paket merchandise eksklusif untuk memeriahkan konser yang Anda pilih\n')
-merchandise = int(input(
-    """ 1. Lighstick\n 2. Lighstick + kaos\n 3. Lightstick + kaos + topi\n 
-    Apakah Anda akan membeli paket merchandise?\n 
-    (Jika iya ketik 1, Jika tidak ketik 2) \n """))
-
-if merchandise == 1:
-    paket = str(
-        input(""" 1. Lighstick\n 2. Lighstick + kaos\n 3. Lightstick + kaos + topi\n
-             Silahkan pilih 1, 2, atau 3 :\n"""))
-    if paket == '1':
-        biaya1 = total_biaya + paket1
-        print('Total biaya = ', biaya1)
-
-    elif paket == '2':
-        biaya1 = total_biaya +  paket2
-        print('Total biaya = ', biaya1)
+ulang = True 
+while ulang == True:    
+    merchandise = int(input("""
+    ----------------------------------------------------
+    Disini kami menyediakan paket merchandise eksklusif 
+    untuk memeriahkan konser yang Anda pilih
+    ----------------------------------------------------
+    1. Lighstick 
+    2. Lighstick + kaos 
+    3. Lightstick + kaos + topi
+    ----------------------------------------------------
+    Apakah Anda akan membeli paket merchandise?
+    (Jika iya ketik 1, Jika tidak ketik 2) 
+    ----------------------------------------------------
+    """))
+ 
+    if merchandise == 1:
+        pilih_paket = True
+        while pilih_paket == True:
+            paket = int(input('\n1. Lighstick\n2. Lighstick + kaos\n3. Lightstick + kaos + topi\nSilahkan pilih 1, 2, atau 3 :\n'))
+            if paket == 1:
+                biaya1 =  total_biaya + paket1
+                print('\nTotal biaya = ', biaya1)
+                pilih_paket = False 
+                ulang = False
+            elif paket == 2:
+                biaya1 = total_biaya + paket2
+                print('\nTotal biaya = ', biaya1 )
+                pilih_paket = False
+                ulang = False
+            elif paket == 3:
+                biaya1 = total_biaya + paket3
+                print('\nTotal biaya = ', biaya1)
+                pilih_paket = False
+                ulang = False
+            else:
+                print('\nInput Anda salah! Silahkan masukkan angka 1/2/3')
+    
+    elif merchandise == 2:
+        print()
+        ulang = False
 
     else:
-        biaya1 = total_biaya +  paket3
-        print('Total biaya = ', biaya1)
-
-
-else:
-    biaya1 = total_biaya 
-    print('Total biaya = ', biaya1)
+        print("\nInput Anda salah! Silahkan coba lagi")
+        
 # PROGRAM METODE PEMBAYARAN MELALUI BANK
 print("""
 ----------------------------------------------------
