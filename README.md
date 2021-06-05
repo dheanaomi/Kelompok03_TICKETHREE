@@ -15,7 +15,8 @@ Berkas "03_Bella_Diagram Alir"
     Merupakan lampiran berupa diagram alir yang menjelaskan cara kerja program.
 Berkas "03_Bella_TUBES TAHAP 1"
     
-    Merupakan laporan Tugas Besar Praktikum Programa Komputer untuk Tahap 1 dengan judul program 'Tickethree'. Laporan ini berisi latar belakang, basis, digram alir, fitur program, keunggulan program, dan potensi di masa depan.    
+    Merupakan laporan Tugas Besar Praktikum Programa Komputer untuk Tahap 1 dengan judul program 'Tickethree'. 
+    Laporan ini berisi latar belakang, basis, digram alir, fitur program, keunggulan program, dan potensi di masa depan.    
 Berkas "Berkas Inspirasi_Pengembangan Seating Number"
 
     Merupakan lampiran berupa dokumen berupa jurnal yang menjadi inspirasi dalam pembuatan program Tickethree.
