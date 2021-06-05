@@ -280,8 +280,8 @@ Filter Harga Berdasarkan\t:
             mainmenu()
     else:
         exit()
-# pemesanan tiket
-       def beli_tiket():
+# pemesanan tiket     
+    def beli_tiket(): 
         syarat_ketentuan = ("\nSyarat dan ketentuan :"
                             "\n1. Pembeli tiket yang akan menonton konser harus berusia 17 tahun keatas dan memiliki KTP."
                             "\n2. Saat akan memasuki Acara pemegang tiket wajib menunjukkan KTP , serta menyertai bukti pembelian yang sah apabila diperlukan."
