@@ -8,3 +8,21 @@ Program ini dibuat untuk memenuhi tugas besar mata kuliah Praktikum Programa kom
 3. Ardaneshwara Gea         (I0320012)
 4. Dhea Naomi Kenlaksita    (I0320026)
 5. Dwi Zaki Nurfaizi        (I0320029)
+
+### Repository
+Berkas "03_Bella_Diagram Alir"
+    
+    Merupakan lampiran berupa diagram alir yang menjelaskan cara kerja program.
+Berkas "03_Bella_TUBES TAHAP 1"
+    
+    Merupakan laporan Tugas Besar Praktikum Programa Komputer untuk Tahap 1 dengan judul program 'Tickethree'. Laporan ini berisi latar belakang, basis, digram alir, fitur program, keunggulan program, dan potensi di masa depan.    
+Berkas "Berkas Inspirasi_Pengembangan Seating Number"
+
+    Merupakan lampiran berupa dokumen berupa jurnal yang menjadi inspirasi dalam pembuatan program Tickethree.
+Berkas "README.md"
+
+    Merupakan penjelasan singkat isi dari repository.
+Berkas "TICKETHREE Pemesanan Tiket Konser"
+
+    Merupakan program pemesanan tiket konser yang akan menjalankan proses dari pemesanan tiket konser berbasis python.  
+
