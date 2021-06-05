@@ -461,12 +461,12 @@ Filter Harga Berdasarkan\t:
                             """)
                 pilonline = int(input("Silahkan pilih aplikasi online dengan memasukkan abjad dari list diatas :"))
                 if pilonline == 1:
-                    print("0812 3135 2171")
+                    print("NO SHOPEEPAY 0812 3135 2171")
                     biaya_akhir = (biaya1 * promo_shopeepay) + biaya1  or (total_biaya * promo_shopeepay) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
                 elif pilonline == 2:
-                    print("0812 6373 3323")
+                    print("NO GOPAY 0812 6373 3323")
                     biaya_akhir = (biaya1 * promo_gopay) + biaya1  or (total_biaya * promo_gopay) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
