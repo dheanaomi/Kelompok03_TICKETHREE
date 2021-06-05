@@ -25,5 +25,8 @@ Berkas "README.md"
     Merupakan penjelasan singkat isi dari repository.
 Berkas "TICKETHREE Pemesanan Tiket Konser"
 
-    Merupakan program pemesanan tiket konser yang akan menjalankan proses dari pemesanan tiket konser berbasis python.  
+    Merupakan program pemesanan tiket konser yang akan menjalankan proses dari pemesanan tiket konser berbasis python.
+Berkas "Berkas Inspirasi_Pemesanan Tiket Konser Musik Berbasis Lokasi"
+    
+    Merupakan lampiran berupa dokumen berupa jurnal yang menjadi inspirasi dalam pembuatan program pemesanan Tickethree.
 
