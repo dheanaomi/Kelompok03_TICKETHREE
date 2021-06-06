@@ -359,7 +359,7 @@ Filter Harga Berdasarkan\t:
                            "\n1. Pembeli tiket yang akan menonton konser harus berusia 17 tahun keatas dan memiliki KTP." 
                            "\n2. Saat akan memasuki Acara pemegang tiket wajib menunjukkan KTP , serta menyertai bukti pembelian yang sah apabila diperlukan." 
                            "\n3. Anak-anak atau Anak-anak tanpa tiket tidak diizinkan memasuki Acara." 
-                           "\n4. Setiap Pemegang Tiket yang memasuki Acara diwajibkan untuk patuh pada peraturan, ketentuan dan kondisi yang berlaku di Tempat Acara.")
+                           "\n4. Setiap Pemegang Tiket yang memasuki Acara diwajibkan untuk patuh pada peraturan, ketentuan dan kondisi yang berlaku di Tempat Acara.\n")
         print('\n', syarat_ketentuan)
         biaya_adm = 3000
         repeat = True
