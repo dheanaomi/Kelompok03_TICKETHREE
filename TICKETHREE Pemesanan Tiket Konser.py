@@ -11,18 +11,18 @@ katalog_konser = {
     'Katalog_1': {'Nama Acara': 'We The Fest', 'Artis': 'Dipha Barus,Weird Genius,Roni & Joni,Cyda',
                   'Tanggal': 'Jumat, 11 Juni 2021', 'Kota': 'Medan',
                   'Tempat': 'Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman', 'Genre': 'EDM',
-                  'Harga': 1200000, 'Status': 100},
+                  'Harga': 1200000, 'Status': 150},
     'Katalog_2': {'Nama Acara': 'Indigo Fest', 'Artis': 'Fourtwenty,Burgerkill,Bottlesmoker,Mocca',
                   'Tanggal': 'Minggu, 20 Juni 2021', 'Kota': 'Riau',
                   'Tempat': 'Kompleks Bandar Seni Raja Ali Haji Purna', 'Genre': 'Indie', 'Harga': 1300000,
                   'Status': 100},
     'Katalog_3': {'Nama Acara': 'Java Jazz Fest', 'Artis': 'Tulus,Indra Lesmana,Maliq & DEssentials,Andien',
                   'Tanggal': 'Senin, 28 Juni 2021', 'Kota': 'Surabaya', 'Tempat': 'Tunjungan Plaza Convention Center',
-                  'Genre': 'Jazz', 'Harga': 1500000, 'Status': 100},
+                  'Genre': 'Jazz', 'Harga': 1500000, 'Status': 140},
     'Katalog_4': {'Nama Acara': 'Lalala Fest', 'Artis': 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush',
                   'Tanggal': 'Sabtu, 5 Juni 2021', 'Kota': 'Jakarta',
                   'Tempat': 'Aula Simfonia 81 Jln. Industri Raya Blok B14', 'Genre': 'Pop', 'Harga': 500000,
-                  'Status': 100}
+                  'Status': 400}
 }
 
 tamp = """\n=================================================
@@ -341,7 +341,10 @@ Filter Harga Berdasarkan\t:
         if len(list_kodeunik) ==7:
             konfirm_batal = input("Apakah anda sudah yakin melakukan pembatalan?(Y/T):")
             if konfirm_batal.upper() == "Y":
-                print("\nTiket Anda Telah Dibatalkan, Refund akan dikirim melalui metode pembayaran dengan potongan 20%")
+                print("""\nTiket Anda Telah Dibatalkan.
+                        Refund akan dikirim melalui metode pembayaran yang dipilih dengan potongan 20%
+                        """)
+                exit()
             else:
                 mainmenu()
         else:
