@@ -11,18 +11,18 @@ katalog_konser = {
     'Katalog_1': {'Nama Acara': 'We The Fest', 'Artis': 'Dipha Barus,Weird Genius,Roni & Joni,Cyda',
                   'Tanggal': 'Jumat, 11 Juni 2021', 'Kota': 'Medan',
                   'Tempat': 'Pendopo Rumah Dinas Gubernur Sumatra Utara Jln. Jendral Sudirman', 'Genre': 'EDM',
-                  'Harga': 1200000, 'Status\t': '>100'},
+                  'Harga': 1200000, 'Status': 100},
     'Katalog_2': {'Nama Acara': 'Indigo Fest', 'Artis': 'Fourtwenty,Burgerkill,Bottlesmoker,Mocca',
                   'Tanggal': 'Minggu, 20 Juni 2021', 'Kota': 'Riau',
                   'Tempat': 'Kompleks Bandar Seni Raja Ali Haji Purna', 'Genre': 'Indie', 'Harga': 1300000,
-                  'Status': '<100'},
+                  'Status': 100},
     'Katalog_3': {'Nama Acara': 'Java Jazz Fest', 'Artis': 'Tulus,Indra Lesmana,Maliq & DEssentials,Andien',
                   'Tanggal': 'Senin, 28 Juni 2021', 'Kota': 'Surabaya', 'Tempat': 'Tunjungan Plaza Convention Center',
-                  'Genre': 'Jazz', 'Harga': 1500000, 'Status': '<100'},
+                  'Genre': 'Jazz', 'Harga': 1500000, 'Status': 100},
     'Katalog_4': {'Nama Acara': 'Lalala Fest', 'Artis': 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush',
                   'Tanggal': 'Sabtu, 5 Juni 2021', 'Kota': 'Jakarta',
                   'Tempat': 'Aula Simfonia 81 Jln. Industri Raya Blok B14', 'Genre': 'Pop', 'Harga': 500000,
-                  'Status': '>100'}
+                  'Status': 100}
 }
 
 tamp = """\n=================================================
@@ -37,7 +37,7 @@ def formatter(katalog):
 
 # Menampilkan menu program TICKETHREE
 def mainmenu():
-    print("""Menu Program\t\t: 
+    print("""Menu Program\t\t\t\t: 
 1.Menu Pembelian Tiket Konser
 2.Menu Pembatalan Tiket konser""")
     v = '=' * len(s)
@@ -110,6 +110,8 @@ List Konser Berdasar Genre:
                                 filtermenu = False
                     else:
                         print("\nMaaf Pilihan yang Anda Masukkan Salah")
+                        pilih_genre=True
+                        filtermenu=True
 
 
             # Berdasarkan Artis
@@ -161,6 +163,8 @@ List Konser Berdasar Artis:
                                 filtermenu = False
                     else:
                         print("\nMaaf Pilihan yang Anda Masukkan Salah")
+                        pilih_artis=True
+                        filtermenu=True
 
             # Berdasarkan Kota
             elif filter_pilihan == 3:
@@ -211,6 +215,8 @@ List Konser Berdasar Kota\t:
                                 filtermenu = False
                     else:
                         print("\nMaaf Pilihan yang Anda Masukkan Salah")
+                        pilih_kota=True
+                        filtermenu=True
 
             # Berdasarkan Harga
             elif filter_pilihan == 4:
@@ -273,6 +279,8 @@ Filter Harga Berdasarkan\t:
                                         harga_tinggi = False
                             else:
                                 print("\nMaaf Pilihan yang Anda Masukkan Salah")
+                                pilih_harga=True
+                                filtermenu=True
 
 
                     elif filter_harga == 2:
@@ -318,9 +326,12 @@ Filter Harga Berdasarkan\t:
                                         harga_rendah = False
                             else:
                                 print("\nMaaf Pilihan yang Anda Masukkan Salah")
+                                pilih_harga=True
+                                harga_rendah=True
 
                     else:
                         print("\nMaaf Pilihan yang Anda Masukkan Salah")
+                        
 
 
     #Menu pembatalan tiket
@@ -337,7 +348,7 @@ Filter Harga Berdasarkan\t:
             print("\nMaaf Kode yang Anda Masukkan Salah\n")
             mainmenu()
     else:
-        exit()
+        mainmenu()
 # pemesanan tiket     
     syarat_ketentuan = ("\nSyarat dan ketentuan :"
                         "\n1. Pembeli tiket yang akan menonton konser harus berusia 17 tahun keatas dan memiliki KTP."
