@@ -341,8 +341,7 @@ Filter Harga Berdasarkan\t:
         if len(list_kodeunik) ==7:
             konfirm_batal = input("Apakah anda sudah yakin melakukan pembatalan?(Y/T):")
             if konfirm_batal.upper() == "Y":
-                print("""\nTiket Anda Telah Dibatalkan.
-                        Refund akan dikirim melalui metode pembayaran yang dipilih dengan potongan 20%
+                print("""\nTiket Anda Telah Dibatalkan.\nRefund akan dikirim melalui metode pembayaran yang dipilih dengan potongan 20%
                         """)
                 exit()
             else:
