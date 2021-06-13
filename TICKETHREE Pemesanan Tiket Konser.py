@@ -288,7 +288,7 @@ Filter Harga Berdasarkan\t:
             print("\nMaaf Kode yang Anda Masukkan Salah\n")
             mainmenu()
     else:
-        exit()
+        mainmenu()
 # pemesanan tiket     
     
        def beli_tiket():
