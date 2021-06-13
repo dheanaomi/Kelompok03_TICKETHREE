@@ -301,7 +301,24 @@ Filter Harga Berdasarkan\t:
         biaya_adm = 3000
         repeat = True
         while repeat == True:
+            file_name = open("dataevent.json", "r")
+            data_str = "".join(file_name.readlines())
+            data_str = data_str.replace("\'", "\"")
+            datanw = json.loads(data_str)
+            # print(datanw, "\n\n", type(datanw), "\n", len(datanw))
+            # file_name.close()
+            pilih_konser = int(input("Masukkan tipe konser yang dipilih : "))
+            dct = "Katalog_%d" % pilih_konser
+            st = datanw[pilih_konser - 1][dct]
+            # print(status)
+            status = datanw[pilih_konser - 1][dct]["Status"]
+            print("Tiket tersedia dalam jumlah %d tiket" % status)
             banyak_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan : "))
+            status -= banyak_tiket
+            print("Banyak tiket tersisa ", status)
+            datanw[pilih_konser - 1][dct]["Status"] = status
+            datanw = str(datanw)
+            file_name.close()
             repeat = False
             database = []
             print()
