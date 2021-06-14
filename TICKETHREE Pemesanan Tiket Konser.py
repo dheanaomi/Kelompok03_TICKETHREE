@@ -371,17 +371,17 @@ Filter Harga Berdasarkan\t:
     ulang = True 
     while ulang == True:    
         merchandise = int(input("""
-        ----------------------------------------------------
-        Disini kami menyediakan paket merchandise eksklusif 
-        untuk memeriahkan konser yang Anda pilih
-        ----------------------------------------------------
-        1. Lighstick 
-        2. Lighstick + kaos 
-        3. Lightstick + kaos + topi
-        ----------------------------------------------------
-        Apakah Anda akan membeli paket merchandise?
-        (Jika iya ketik 1, Jika tidak ketik 2) 
-        ----------------------------------------------------
+----------------------------------------------------
+Disini kami menyediakan paket merchandise eksklusif 
+untuk memeriahkan konser yang Anda pilih
+----------------------------------------------------
+1. Lighstick  Rp. 15.000
+2. Lighstick + kaos  Rp. 85.000
+3. Lightstick + kaos + topi  Rp. 110.000
+----------------------------------------------------
+Apakah Anda akan membeli paket merchandise?
+(Jika iya ketik 1, Jika tidak ketik 2) 
+----------------------------------------------------
         """))
     
         if merchandise == 1:
@@ -423,26 +423,26 @@ Filter Harga Berdasarkan\t:
     ulang = True 
     while ulang == True:
         pilihmetodepemb = int(input("""
-    ----------------------------------------------------
-    SELAMAT DATANG DI METODE PEMBAYARAN TICKETHREE
-    ----------------------------------------------------
-    Silahkan pilih metode pembayaran
-    1. Bank
-    2. Aplikasi Online
-    ----------------------------------------------------
-    Silahkan pilih metode pembayaran dengan memasukkan nomor dari list di atas :
+----------------------------------------------------
+SELAMAT DATANG DI METODE PEMBAYARAN TICKETHREE
+----------------------------------------------------
+Silahkan pilih metode pembayaran
+1. Bank
+2. Aplikasi Online
+----------------------------------------------------
+Silahkan pilih metode pembayaran dengan memasukkan nomor dari list di atas :
     """))
     
         if pilihmetodepemb == 1:
             
                 print("""
-        ------------------------------------
-        PILIHAN BANK
-        ------------------------------------
-        1. BNI  
-        2. MANDIRI
-        3. BCA
-        ------------------------------------                   
+------------------------------------
+PILIHAN BANK
+------------------------------------
+1. BNI  
+2. MANDIRI
+3. BCA
+------------------------------------                   
                             """)
                 pilbank = int(input("Silahkan pilih bank dengan memasukkan nomor dari list diatas :"))
                 if pilbank == 1:
@@ -466,12 +466,12 @@ Filter Harga Berdasarkan\t:
         elif pilihmetodepemb == 2:
             
                 print("""
-        ------------------------------------
-        PILIHAN APLIKASI ONLINE
-        ------------------------------------
-        1. Shopeepay
-        2. Gopay
-        ------------------------------------                   
+------------------------------------
+PILIHAN APLIKASI ONLINE
+------------------------------------
+1. Shopeepay
+2. Gopay
+------------------------------------                   
                             """)
                 pilonline = int(input("Silahkan pilih aplikasi online dengan memasukkan abjad dari list diatas :"))
                 if pilonline == 1:
@@ -508,7 +508,7 @@ Filter Harga Berdasarkan\t:
             print("\n=========",localtime, "==========\n")
             formatter(entry)
             print("============================================="
-                    "\nBanyak Tiket  :\t", banyak_tiket,
+                    "\nBanyak Tiket  : \t", banyak_tiket,
                     "\nHarga tiket   : \t", current_harga,
                     "\nHarga merch   : \t", harga_merch,
                     "\nTotal biaya   : \t", biaya_akhir,
