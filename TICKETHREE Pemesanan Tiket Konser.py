@@ -302,6 +302,13 @@ Filter Harga Berdasarkan\t:
     while repeat == True:
         file_name = open("dataevent.json", "r")
         data_str = "".join(file_name.readlines())
+        print("""====================================
+        \n Informasi Tiket Konser\t:
+        1. We The Fest
+        2. Indigo Fest
+        3. Java Jazz Fest
+        4. Lalala Fest 
+        """)
         data_str = data_str.replace("\'", "\"")
         datanw = json.loads(data_str)
         # print(datanw, "\n\n", type(datanw), "\n", len(datanw))
@@ -322,7 +329,7 @@ Filter Harga Berdasarkan\t:
         database = []
         print()
         for i in range(int(banyak_tiket)):
-            print('biodata', i + 1)
+            print('Biodata', i + 1)
             entry = {
                 'nama': input('Nama: '),
                 'telepon': input('Telepon: '),
