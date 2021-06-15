@@ -340,7 +340,7 @@ Filter Harga Berdasarkan\t:
             print()
             database.append(entry)
         for i, entry in enumerate(database):
-            print('biodata', i + 1)
+            print('Biodata', i + 1)
             if len(entry['KTP']) != 16 or entry['usia'] <= 16:
                 print('===Maaf anda belum memenuhi persyaratan terdapat data ktp atau usia yang tidak valid===',
                         syarat_ketentuan, '\n')
