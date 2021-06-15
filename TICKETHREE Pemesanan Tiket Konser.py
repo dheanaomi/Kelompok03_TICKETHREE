@@ -291,6 +291,8 @@ Filter Harga Berdasarkan\t:
     else:
         mainmenu()
 # pemesanan tiket
+    print("\nTunggu sebentar...")
+    time.sleep(2)
     syarat_ketentuan = ("\nSyarat dan ketentuan :"
                         "\n1. Pembeli tiket yang akan menonton konser harus berusia 17 tahun keatas dan memiliki KTP."
                         "\n2. Saat akan memasuki Acara pemegang tiket wajib menunjukkan KTP , serta menyertai bukti pembelian yang sah apabila diperlukan."
@@ -313,7 +315,7 @@ Filter Harga Berdasarkan\t:
         datanw = json.loads(data_str)
         # print(datanw, "\n\n", type(datanw), "\n", len(datanw))
         # file_name.close()
-        pilih_konser = int(input("Masukkan tipe konser yang dipilih : "))
+        pilih_konser = int(input("Silahkan input angka sesuai dengan acara yang sudah dipilih sebelumnya (1/2/3/4) : "))
         dct = "Katalog_%d" % pilih_konser
         st = datanw[pilih_konser - 1][dct]
         # print(status)
