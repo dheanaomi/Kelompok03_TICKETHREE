@@ -30,15 +30,21 @@ Berkas "Berkas Inspirasi_Pemesanan Tiket Konser Musik Berbasis Lokasi"
     
     Merupakan lampiran berupa dokumen berupa jurnal yang menjadi inspirasi dalam pembuatan program pemesanan Tickethree.
 
-###System Requirement
+**System Requirement**
+
   Python V3
-  ####Spesifikasi OS :
+
+  **Spesifikasi OS :**
   1. Linux Ubuntu 16.04 to 17.10 
   2. Windows 7 up to 10
   3. Mac X
-  ####File Pendukung :
+
+  **File Pendukung :**
+     
   dataevent.json
-  #####Library :
+
+  **Library :**
   1. library json
   2. library time
+    
     
