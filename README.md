@@ -47,4 +47,12 @@ Berkas "Berkas Inspirasi_Pemesanan Tiket Konser Musik Berbasis Lokasi"
   1. library json
   2. library time
     
-    
+ **Penggunaan Program** 
+ 1. Start program di python
+2. Memilih menu memesan tiket konser atau pembatalan tiket
+3. Memilih konser yang akan ditonton dengan berbagai macam filter sesuai dengan keinginan pengguna
+4. Menginput data diri
+5. Membeli merchandise jika ingin
+6. Melakukan transaksi lewat bank atau aplikasi online
+7. Mendapatkan kode unik
+8. Menampilkan struk jika pembayaran berhasil
