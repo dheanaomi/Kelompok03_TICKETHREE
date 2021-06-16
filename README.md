@@ -32,13 +32,13 @@ Berkas "Berkas Inspirasi_Pemesanan Tiket Konser Musik Berbasis Lokasi"
 
 ###System Requirement
   Python V3
-  Spesifikasi OS :
-    Linux -Ubuntu 16.04 to 17.10
-    Windows 7 up to 10
-    Mac X
-  File Pendukung :
-    dataevent.json
-  Library :
-    library json
-    library time
+  ####Spesifikasi OS :
+  1. Linux Ubuntu 16.04 to 17.10 
+  2. Windows 7 up to 10
+  3. Mac X
+  ####File Pendukung :
+  dataevent.json
+  #####Library :
+  1. library json
+  2. library time
     
