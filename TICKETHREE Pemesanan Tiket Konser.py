@@ -503,7 +503,6 @@ PILIHAN APLIKASI ONLINE
     import random
 
     bil = random.randint(999999, 9999999)
-    kode_unik = random.randint(99, 9999)
     ulangi = True 
     while ulangi == True:
         print("------------- Kode transaksi Anda -------------\n",
@@ -522,7 +521,7 @@ PILIHAN APLIKASI ONLINE
                     "\nHarga merch   : \t", harga_merch,
                     "\nTotal biaya   : \t", biaya_akhir,
                     "\n\n================= KODE UNIK =================",
-                    "\n====================", kode_unik, "==================="
+                    "\n====================", bil, "==================="
                     """\nTukarkan kode diatas dengan merchandise 
 yang Anda beli.
 Jika tidak membeli, abaikan! akan dicek!""",
