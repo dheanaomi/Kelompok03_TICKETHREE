@@ -1,5 +1,6 @@
 import time
 import json
+import random
 localtime = time.asctime( time.localtime(time.time()) )
 
 # Memulai Program TICKETHREE
@@ -30,11 +31,9 @@ tamp = """\n=================================================
 Informasi Pemesanan Tiket Konser 'TICKETHREE'
 ================================================="""
 
-
 def formatter(katalog):
     for key in katalog.keys():
         print(f"""{key}\t\t= {katalog[key]}""")
-
 
 # Menampilkan menu program TICKETHREE
 def mainmenu():
@@ -43,6 +42,7 @@ def mainmenu():
 2.Menu Pembatalan Tiket konser""")
     v = '=' * len(s)
     print(v)
+    
     # Menginputkan menu yang diinginkan
     pilihan_menu = int(input("Ketik Menu Program (1/2)\t:"))
     if pilihan_menu == 1:
@@ -56,12 +56,11 @@ Filter Konser Berdasarkan\t:
 3. Kota
 4. Harga
 \n=================================================""")
-
             filter_pilihan = int(input("Ketik Filter Konser Yang Anda Inginkan (1/2/3/4)\t:"))
 
             # Berdasarkan Genre
-            if filter_pilihan == 1:
-                # Menampilkan list berdasar genre
+            if filter_pilihan == 1:                
+                # Menampilkan list berdasar genre                
                 print("""
 \n=================================================
 List Konser Berdasar Genre:
@@ -69,9 +68,10 @@ List Konser Berdasar Genre:
 2. Indie
 3. Jazz
 4. Pop
-""")
+""")                
                 filtermenu = False
                 list_genre = int(input("Ketik List Konser Genre (1/2/3/4)\t: "))
+                
                 if list_genre == 1:
                     print(tamp)
                     for key in katalog_konser.keys():
@@ -99,9 +99,9 @@ List Konser Berdasar Genre:
                         if katalog_konser[key]['Genre'] == 'Pop':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 else:
                     print("\nMaaf Pilihan yang Anda Masukkan Salah")
-
 
             # Berdasarkan Artis
             elif filter_pilihan == 2:
@@ -116,30 +116,35 @@ List Konser Berdasar Artis:
 """)
                 filtermenu = False
                 list_artis = int(input("Ketik List Konser Berdasar Artis (1/2/3/4)\t: "))
+                
                 if list_artis == 1:
                     print(tamp)
                     for key in katalog_konser.keys():
                         if katalog_konser[key]['Artis'] == 'Ardhito Pramono,Isyana Sarasvati,Yura Yunita,Crush':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 elif list_artis == 2:
                     print(tamp)
                     for key in katalog_konser.keys():
                         if katalog_konser[key]['Artis'] == 'Dipha Barus,Weird Genius,Roni & Joni,Cyda':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 elif list_artis == 3:
                     print(tamp)
                     for key in katalog_konser.keys():
                         if katalog_konser[key]['Artis'] == 'Fourtwenty,Burgerkill,Bottlesmoker,Mocca':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 elif list_artis == 4:
                     print(tamp)
                     for key in katalog_konser.keys():
                         if katalog_konser[key]['Artis'] == 'Tulus,Indra Lesmana,Maliq & DEssentials,Andien':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 else:
                     print("\nMaaf Pilihan yang Anda Masukkan Salah")
 
@@ -156,30 +161,35 @@ List Konser Berdasar Kota\t:
 """)
                 filtermenu = False
                 list_kota = int(input("Ketik List Konser Berdasar Kota (1/2/3/4)\t: "))
+
                 if list_kota == 1:
                     print(tamp)
                     for key in katalog_konser.keys():
                         if katalog_konser[key]['Kota'] == 'Jakarta':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 elif list_kota == 2:
                     print(tamp)
                     for key in katalog_konser.keys():
                         if katalog_konser[key]['Kota'] == 'Medan':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 elif list_kota == 3:
                     print(tamp)
                     for key in katalog_konser.keys():
                         if katalog_konser[key]['Kota'] == 'Riau':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 elif list_kota == 4:
                     print(tamp)
                     for key in katalog_konser.keys():
                         if katalog_konser[key]['Kota'] == 'Surabaya':
                             current_harga = katalog_konser[key]['Harga']
                             print(formatter(katalog_konser[key]))
+
                 else:
                     print("\nMaaf Pilihan yang Anda Masukkan Salah")
 
@@ -201,39 +211,42 @@ Filter Harga Berdasarkan\t:
 
                 if filter_harga == 1:
                     list_harga.sort(reverse=True)
-
                     print("List Harga Tiket Konser Dari Yang Tertinggi :")
                     for i in range(0, len(list_harga)):
                         print('%d. %d' % (i+1, list_harga[i]))
 
                     pilihan_harga = int(input("Masukkan Nomor Harga Yang Dipilih(1/2/3/4): "))
+
                     if pilihan_harga == 1:
                         print(tamp)
                         for key in katalog_konser.keys():
                             if katalog_konser[key]['Harga'] == 1500000:
                                 current_harga = katalog_konser[key]['Harga']
                                 formatter(katalog_konser[key])
+
                     elif pilihan_harga == 2:
                         print(tamp)
                         for key in katalog_konser.keys():
                             if katalog_konser[key]['Harga'] == 1300000:
                                 current_harga = katalog_konser[key]['Harga']
                                 formatter(katalog_konser[key])
+
                     elif pilihan_harga == 3:
                         print(tamp)
                         for key in katalog_konser.keys():
                             if katalog_konser[key]['Harga'] == 1200000:
                                 current_harga = katalog_konser[key]['Harga']
                                 formatter(katalog_konser[key])
+
                     elif pilihan_harga == 4:
                         print(tamp)
                         for key in katalog_konser.keys():
                             if katalog_konser[key]['Harga'] == 500000:
                                 current_harga = katalog_konser[key]['Harga']
                                 formatter(katalog_konser[key])
+
                     else:
                         print("\nMaaf Pilihan yang Anda Masukkan Salah")
-
 
                 elif filter_harga == 2:
                     list_harga.sort()
@@ -249,50 +262,60 @@ Filter Harga Berdasarkan\t:
                             if katalog_konser[key]['Harga'] == 500000:
                                 current_harga = katalog_konser[key]['Harga']
                                 formatter(katalog_konser[key])
+
                     elif pilihan_harga == 2:
                         print(tamp)
                         for key in katalog_konser.keys():
                             if katalog_konser[key]['Harga'] == 1200000:
                                 current_harga = katalog_konser[key]['Harga']
                                 formatter(katalog_konser[key])
+
                     elif pilihan_harga == 3:
                         print(tamp)
                         for key in katalog_konser.keys():
                             if katalog_konser[key]['Harga'] == 1300000:
                                 current_harga = katalog_konser[key]['Harga']
                                 formatter(katalog_konser[key])
+
                     elif pilihan_harga == 4:
                         print(tamp)
                         for key in katalog_konser.keys():
                             if katalog_konser[key]['Harga'] == 1500000:
                                 current_harga = katalog_konser[key]['Harga']
                                 formatter(katalog_konser[key])
+
                     else:
                         print("\nMaaf Pilihan yang Anda Masukkan Salah")
 
             else:
                 print("\nMaaf Pilihan yang Anda Masukkan Salah")
 
-
     #Menu pembatalan tiket
     elif pilihan_menu==2:
         proses_pembatalan = input("Masukkan Kode Unik Tiket Anda: ")
         list_kodeunik= list(proses_pembatalan)
+
         if len(list_kodeunik) ==7:
             konfirm_batal = input("Apakah anda sudah yakin melakukan pembatalan?(Y/T):")
+
             if konfirm_batal.upper() == "Y":
                 print("\nTiket Anda Telah Dibatalkan, Refund akan dikirim melalui metode pembayaran dengan potongan 20%")
                 exit(0)
+
             else:
                 mainmenu()
+
         else:
             print("\nMaaf Kode yang Anda Masukkan Salah\n")
             mainmenu()
+
     else:
         mainmenu()
+
 # pemesanan tiket
     print("\nTunggu sebentar...")
     time.sleep(2)
+
     syarat_ketentuan = ("\nSyarat dan ketentuan :"
                         "\n1. Pembeli tiket yang akan menonton konser harus berusia 17 tahun keatas dan memiliki KTP."
                         "\n2. Saat akan memasuki Acara pemegang tiket wajib menunjukkan KTP , serta menyertai bukti pembelian yang sah apabila diperlukan."
@@ -301,11 +324,12 @@ Filter Harga Berdasarkan\t:
     print('\n', syarat_ketentuan)
     biaya_adm = 3000
     repeat = True
+
     while repeat == True:
         file_name = open("dataevent.json", "r")
         data_str = "".join(file_name.readlines())
         print("""====================================
-        \n Informasi Tiket Konser\t:
+        \nInformasi Tiket Konser\t:
         1. We The Fest
         2. Indigo Fest
         3. Java Jazz Fest
@@ -313,11 +337,13 @@ Filter Harga Berdasarkan\t:
         """)
         data_str = data_str.replace("\'", "\"")
         datanw = json.loads(data_str)
+
         # print(datanw, "\n\n", type(datanw), "\n", len(datanw))
         # file_name.close()
         pilih_konser = int(input("Silahkan input angka sesuai dengan acara yang sudah dipilih sebelumnya (1/2/3/4) : "))
         dct = "Katalog_%d" % pilih_konser
         st = datanw[pilih_konser - 1][dct]
+
         # print(status)
         status = datanw[pilih_konser - 1][dct]["Status"]
         print("Tiket tersedia dalam jumlah %d tiket" % status)
@@ -330,6 +356,7 @@ Filter Harga Berdasarkan\t:
         repeat = False
         database = []
         print()
+
         for i in range(int(banyak_tiket)):
             print('Biodata', i + 1)
             entry = {
@@ -341,32 +368,35 @@ Filter Harga Berdasarkan\t:
             }
             print()
             database.append(entry)
+
         for i, entry in enumerate(database):
             print('Biodata', i + 1)
+
             if len(entry['KTP']) != 16 or entry['usia'] <= 16:
                 print('===Maaf anda belum memenuhi persyaratan terdapat data ktp atau usia yang tidak valid===',
                         syarat_ketentuan, '\n')
                 repeat = True
+
             else:
                 formatter(entry)
                 repeat = False
             print()
+
     global total_biaya
     total_biaya = (banyak_tiket * current_harga) * 1.05 + biaya_adm
-
-
     pilihan2 = input("\nMelanjutkan ke proses transaksi (ya/tidak) :")
+
     if pilihan2 == "ya":
         time.sleep(1)
         print("\nBiaya :", total_biaya)
         print("Tunggu sebentar...\n")
         time.sleep(2)
+
     else:
         print("\n========Terima kasih telah menggunakan program TICKETHREE========")
-        exit(0)    
-    
+        exit(0)        
 
-    # informasi paket dan promo tiap bank
+    # informasi paket merchandise dan promo tiap bank
     promo_BNI = 0.03
     promo_Mandiri = 0.025
     promo_BCA = 0.025
@@ -378,6 +408,8 @@ Filter Harga Berdasarkan\t:
     
     # PROGRAM PEMBELIAN MERCHANDISE
     ulang = True 
+
+    # looping untuk input pembelian merchandise
     while ulang == True:    
         merchandise = int(input("""
 ----------------------------------------------------
@@ -394,27 +426,33 @@ Apakah Anda akan membeli paket merchandise?
         """))
     
         if merchandise == 1:
-            pilih_paket = True
+            pilih_paket = True       
+
+            # looping untuk input pilihan merchandise
             while pilih_paket == True:
                 paket = int(input('\n1. Lighstick\n2. Lighstick + kaos\n3. Lightstick + kaos + topi\nSilahkan pilih 1, 2, atau 3 :\n'))
+
                 if paket == 1:
-                    harga_merch = paket1
-                    biaya1 =  total_biaya + paket1
+                    harga_merch = paket1 # harga_merch akan dimunculkan pada struk
+                    biaya1 =  total_biaya + paket1 # biaya1 merupakan total biaya tiket + harga paket merchandise
                     print('\nTotal biaya = ', biaya1)
                     pilih_paket = False 
                     ulang = False
+
                 elif paket == 2:
                     harga_merch = paket2
                     biaya1 = total_biaya + paket2
                     print('\nTotal biaya = ', biaya1 )
                     pilih_paket = False
                     ulang = False
+
                 elif paket == 3:
                     harga_merch = paket3
                     biaya1 = total_biaya + paket3
                     print('\nTotal biaya = ', biaya1)
                     pilih_paket = False
                     ulang = False
+
                 else:
                     print('\nInput Anda salah! Silahkan masukkan angka 1/2/3')
         
@@ -427,9 +465,9 @@ Apakah Anda akan membeli paket merchandise?
         else:
             print("\nInput Anda salah! Silahkan coba lagi")
             
-    # PROGRAM METODE PEMBAYARAN MELALUI BANK
-    
+    # PROGRAM METODE PEMBAYARAN MELALUI BANK    
     ulang = True 
+
     while ulang == True:
         pilihmetodepemb = int(input("""
 ----------------------------------------------------
@@ -442,8 +480,7 @@ Silahkan pilih metode pembayaran
 Silahkan pilih metode pembayaran dengan memasukkan nomor dari list di atas :
     """))
     
-        if pilihmetodepemb == 1:
-            
+        if pilihmetodepemb == 1:            
                 print("""
 ------------------------------------
 PILIHAN BANK
@@ -454,26 +491,29 @@ PILIHAN BANK
 ------------------------------------                   
                             """)
                 pilbank = int(input("Silahkan pilih bank dengan memasukkan nomor dari list diatas :"))
+
                 if pilbank == 1:
                     print("Rekening BNI 0178305704")
                     biaya_akhir = (biaya1 * promo_BNI) + biaya1  or (total_biaya * promo_BNI) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
+
                 elif pilbank == 2:
                     print("Rekening Mandiri 1560009861578")
                     biaya_akhir = (biaya1 * promo_Mandiri) + biaya1  or (total_biaya * promo_Mandiri) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
+
                 elif pilbank == 3:
                     print("Rekening BCA 5220304312")
                     biaya_akhir = (biaya1 * promo_BCA) + biaya1  or (total_biaya * promo_BCA) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
+
                 else:
                     print('\nAnda salah! coba lagi!')
                 
-        elif pilihmetodepemb == 2:
-            
+        elif pilihmetodepemb == 2:            
                 print("""
 ------------------------------------
 PILIHAN APLIKASI ONLINE
@@ -483,34 +523,37 @@ PILIHAN APLIKASI ONLINE
 ------------------------------------                   
                             """)
                 pilonline = int(input("Silahkan pilih aplikasi online dengan memasukkan abjad dari list diatas :"))
+
                 if pilonline == 1:
                     print("NO SHOPEEPAY 0812 3135 2171")
                     biaya_akhir = (biaya1 * promo_shopeepay) + biaya1  or (total_biaya * promo_shopeepay) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
+
                 elif pilonline == 2:
                     print("NO GOPAY 0812 6373 3323")
                     biaya_akhir = (biaya1 * promo_gopay) + biaya1  or (total_biaya * promo_gopay) + total_biaya
                     print("Total Pembayaran tiket anda: ", "Rp", biaya_akhir)
                     ulang = False
+
                 else:
                     print('\nAnda salah! coba lagi!')
             
         else:
             print('\nInput yang Anda masukkan salah! Silahkan coba lagi!')
     
-    # Memunculkan kode transaksi
-    import random
-
-    bil = random.randint(999999, 9999999)
+    # program untuk memunculkan Struk, kode transaksi dan kode unik
+    bil = random.randint(999999, 9999999) # variabel dibuat untuk dijadikan kode transaksi dan kode unik 
     ulangi = True 
+
+    # looping untuk input kode transaksi
     while ulangi == True:
         print("------------- Kode transaksi Anda -------------\n",
             "\n------------------ ", bil, " ------------------ ", 
             "\n\nSilahkan lakukan pembayaran dengan kode tersebut\n")
-
         bayar = int(input("Silahkan masukkan kode transaksi untuk melakukan pembayaran:\n"))
-        if bayar == bil :
+        
+        if bayar == bil : 
             print("\nSelamat! Transaksi sukses!\n")
             print("\n================= STRUK =====================")
             print("\n=========",localtime, "==========\n")
@@ -527,7 +570,8 @@ yang Anda beli.
 Jika tidak membeli, abaikan! akan dicek!""",
                     "\n================ TERIMA KASIH ===============")
             ulangi = False 
-        else:
+
+        else: 
             print('Kode yang Anda masukkan salah! Silahkan coba lagi!\n')
         print()
         ulang = False
