@@ -407,7 +407,7 @@ Filter Harga Berdasarkan\t:
         print("\n========Terima kasih telah menggunakan program TICKETHREE========")
         exit(0)        
 
-    # informasi paket merchandise dan promo tiap bank
+    # variabel paket merchandise dan promo tiap bank
     promo_BNI = 0.03
     promo_Mandiri = 0.025
     promo_BCA = 0.025
@@ -419,10 +419,9 @@ Filter Harga Berdasarkan\t:
     
     # PROGRAM PEMBELIAN MERCHANDISE
     ulang = True 
-
-    # looping untuk input pembelian merchandise
+    
     while ulang == True:    
-        merchandise = int(input("""
+        beli_merchandise = int(input("""
 ----------------------------------------------------
 Disini kami menyediakan paket merchandise eksklusif 
 untuk memeriahkan konser yang Anda pilih
@@ -436,16 +435,16 @@ Apakah Anda akan membeli paket merchandise?
 ----------------------------------------------------
         """))
     
-        if merchandise == 1:
+        if beli_merchandise == 1:
             pilih_paket = True       
 
-            # looping untuk input pilihan merchandise
+            # Input pilihan merchandise
             while pilih_paket == True:
                 paket = int(input('\n1. Lighstick\n2. Lighstick + kaos\n3. Lightstick + kaos + topi\nSilahkan pilih 1, 2, atau 3 :\n'))
 
                 if paket == 1:
-                    harga_merch = paket1 # harga_merch akan dimunculkan pada struk
-                    biaya1 =  total_biaya + paket1 # biaya1 merupakan total biaya tiket + harga paket merchandise
+                    harga_merch = paket1 
+                    biaya1 =  total_biaya + paket1 
                     print('\nTotal biaya = ', biaya1)
                     pilih_paket = False 
                     ulang = False
@@ -467,7 +466,7 @@ Apakah Anda akan membeli paket merchandise?
                 else:
                     print('\nInput Anda salah! Silahkan masukkan angka 1/2/3')
         
-        elif merchandise == 2:
+        elif beli_merchandise == 2:
             harga_merch = 0
             biaya1 = total_biaya
             print()
@@ -478,7 +477,7 @@ Apakah Anda akan membeli paket merchandise?
             
     # PROGRAM METODE PEMBAYARAN MELALUI BANK    
     ulang = True 
-
+    
     while ulang == True:
         pilihmetodepemb = int(input("""
 ----------------------------------------------------
@@ -554,17 +553,16 @@ PILIHAN APLIKASI ONLINE
             print('\nInput yang Anda masukkan salah! Silahkan coba lagi!')
     
     # program untuk memunculkan Struk, kode transaksi dan kode unik
-    bil = random.randint(999999, 9999999) # variabel dibuat untuk dijadikan kode transaksi dan kode unik 
+    kode_unik = random.randint(999999, 9999999)  
     ulangi = True 
-
-    # looping untuk input kode transaksi
+    
     while ulangi == True:
         print("------------- Kode transaksi Anda -------------\n",
-            "\n------------------ ", bil, " ------------------ ", 
+            "\n------------------ ", kode_unik, " ------------------ ", 
             "\n\nSilahkan lakukan pembayaran dengan kode tersebut\n")
         bayar = int(input("Silahkan masukkan kode transaksi untuk melakukan pembayaran:\n"))
         
-        if bayar == bil : 
+        if bayar == kode_unik : 
             print("\nSelamat! Transaksi sukses!\n")
             print("\n================= STRUK =====================")
             print("\n=========",localtime, "==========\n")
@@ -575,7 +573,7 @@ PILIHAN APLIKASI ONLINE
                     "\nHarga merch   : \t", harga_merch,
                     "\nTotal biaya   : \t", biaya_akhir,
                     "\n\n================= KODE UNIK =================",
-                    "\n====================", bil, "==================="
+                    "\n==================", kode_unik, "=================="
                     """\nTukarkan kode diatas dengan merchandise 
 yang Anda beli.
 Jika tidak membeli, abaikan! akan dicek!""",
